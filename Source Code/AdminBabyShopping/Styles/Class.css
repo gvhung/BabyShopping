@@ -1,0 +1,321 @@
+﻿
+
+body {
+	background:#fff;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin:0px;
+	padding:0px; 
+	background:#ffffff;
+}
+h1, h2, h3, h4, h5, h6, ul, li {
+	margin:0px;
+	padding:0px;
+}
+h1{font: normal 36px "Trebuchet MS", Arial, Helvetica, sans-serif; margin:0; padding: 0 0 20px 0;}
+h2{font: italic 22px "Trebuchet MS", Arial, Helvetica, sans-serif; margin:0; padding: 0 0 10px 0;}
+h3{font: normal 20px "Times New Roman", Times, serif; margin:0; padding: 0 0 20px 0; text-transform: uppercase}
+h4{font: normal 16px "Times New Roman", Times, serif; margin:0; padding: 10px 0 0 0;}
+
+a {
+	text-decoration:none;
+	color: #85beb8;
+}
+a:hover {
+	text-decoration:none;
+}
+a img {
+	border:0px;
+}
+.fl {
+	float:left!important;
+}
+.fr {
+	float:right!important;
+}
+.cl {
+	clear:both;
+}
+.mrgnTop10 {margin-top: 10px!important;}
+.abs {
+	position:absolute;
+}
+.rel {
+	position:relative;
+}
+.padT10 {
+	padding-top:10px;
+}
+/* Main classes */
+
+#wraper {
+	margin:0px;
+	padding:0px;
+}
+.Header {
+	margin:0px;
+	padding:0 15px;
+	background:url(../Images/navBG.gif) repeat-x 0 0;
+	height:82px;
+	min-width:1000px;
+	position:relative;
+}
+.main-container {
+	margin:0px auto;
+	padding:0px;
+	width:1000px;
+	position:relative;
+}
+.logo {
+	position:absolute;
+	left:0px;
+}
+.main-section-midd {
+	background:url(../Images/Lovely-Baby.jpg) no-repeat center -67px;
+	min-width:1000px;
+	padding:0 15px;
+
+}
+.middhomesection {
+	height:750px;
+}
+.slogen {
+	font:24px"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+	text-align:right;
+	padding-top:550px;
+}
+.nav {
+	margin:0px;
+	padding:15px 0 0 150px;
+}
+.nav ul {
+	margin:0px;
+	padding:0px;
+}
+.nav li {
+	margin:0px;
+	padding:15px;
+	float:left;
+	list-style:none;
+}
+.nav li a {
+	margin:0px;
+	padding:0px;
+	font:normal 17px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+}
+.nav li a:hover {
+	color:#98d6d1;
+}
+.searchContainer {
+	padding:30px 0 0 0
+}
+.search input {
+	background:url(../Images/sprite.gif) no-repeat 0px -31px;
+	width:140px;
+	height:30px;
+	border:0px;
+	outline:none;
+	padding:0 5px 0 5px;
+	font:12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+	float:left;
+}
+.search input.btn {
+	background:url(../Images/sprite.gif) no-repeat -152px -31px;
+	width:20px;
+	height:30px;
+	float:left;
+	margin-right:10px;
+	cursor:pointer;
+}
+.addCart {
+	font:bold 14px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#97d4d5;
+	margin-top:-15px;
+	text-align:center;
+}
+.addCart a img {
+	background:url(../Images/sprite.gif) no-repeat -69px 0px;
+	width:26px;
+	height:28px;
+	margin-top:-4px;
+}
+.footer {
+	margin:0px auto;
+	padding:0px;
+	background:url(../Images/footerBG.gif) repeat-x 0 0;
+	height:39px;
+	font:12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+	min-width:1000px;
+	position:relative;
+	top:114px;
+}
+.footerLinks {
+	margin:0px;
+	padding:0px;
+}
+.footerLinks ul {
+	margin:0px;
+	padding:0px;
+}
+.footerLinks li {
+	margin:0px;
+	padding:10px 5px 0 5px;
+	float:left;
+	list-style:none;
+}
+.footerLinks li a {
+	margin:0px;
+	padding:0px;
+	font:bold 13px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+}
+.footerLinks li a:hover {
+	color:#ccc;
+}
+.footerLinks li a img {
+	background:url(../Images/sprite.gif) no-repeat 0 10000px;
+	margin:-2px 5px 0 5px;
+}
+.footerLinks li a img.twitter {
+	background-position:0 0;
+	width:10px;
+	height:14px;
+}
+.footerLinks li a img.facebook {
+	background-position:-20px 0;
+	width:10px;
+	height:17px;
+}
+.footerLinks li a img.thirdicon {
+	background-position:-39px 0;
+	width:16px;
+	height:20px;
+}
+
+/**** Hush Content *****/
+.inner-section { width:970px; padding:0 15px; margin: 0 auto; position: relative;} 
+.container {width: 820px; margin: 30px 0 30px 135px;min-height:315px;max-height:400px; /*position: absolute; top: 30px; right: 20px;*/}
+.roundedTop {background: url(../Images/roundtopbg.png) repeat-x top left; width: 810px; height: 34px;}
+.roundedBg {background: url(../Images/roundBg.png) repeat-y top left; width: 740px; padding: 10px 35px;}
+.roundedBot {background: url(../Images/roundBotbg.png) repeat-x top left; width: 810px; height: 34px;}
+
+/**** Shopping Cart *****/
+.cartCnt {margin:0; padding:0;}
+.cartRow{border-bottom:1px solid #000; padding: 0 0 5px 0; font: normal 12px Arial, Helvetica, sans-serif; margin: 0 0 10px 0;}
+.cartLstng{background-color: #f3f2f0; margin: 0 0 10px 0;  padding: 10px 0 0 10px; text-transform: uppercase}
+.status {width: 80px;}
+.price {width: 105px;}
+.item {width: 430px; font: normal 14px "Times New Roman", Times, serif;}
+.item img {vertical-align: middle; margin: 0 10px 0 0;}
+.subTotal{background-color: #cfd0cb; padding: 10px;}
+.total{background-color: #87877d; color:#fff; padding: 10px;}
+.total span{font: normal 24px "Times New Roman", Times, serif;}
+.cntShopng{padding: 10px 0 0 0;}
+.cntShopng a {text-decoration: underline;}
+.cntShopng a:hover {text-decoration: none;}
+#Header .autocompletesuggestion {position: absolute; width: 332px; top: 127px; left: 830.5px!important; }
+flexmenu1
+
+/***** Drop Down ******/
+.flexdropTopMenu
+    {
+    top:50%;  
+    position: relative;
+    background:red;    
+    left:25%;
+    }
+.flexdropdownmenu, .flexdropdownmenu ul{ /*topmost and sub ULs, respectively*/
+                                        font: normal 12px Tahoma, "Times New Roman", Times, Serif;
+                                         margin: 0;
+                                         padding:0px;
+                                         position:absolute; 
+                                         top:0px; 
+                                         list-style-type: none; 
+                                         visibility: hidden; 
+                                         display: none;}
+
+.rightarrowclass
+{
+    position: absolute; 
+    top: 6px; 
+    right: 5px;} 
+
+/****** Shadow Box ********/
+.shadowTop {background: url(../Images/shadowTop.png) no-repeat top left; width: 403px; height: 14px;}
+.shadowBot {background: url(../Images/shadowBot.png) no-repeat top left; width: 403px; height: 14px;}
+.shadowTopSmal {background: url(../Images/shadowTop_s.png) no-repeat top left; width: 260px; height: 14px;}
+
+.shadowBotSmal {background: url(../Images/shadowBot_s.png) no-repeat top left; width: 260px; height: 14px;}
+.shadowBoxSmal{font-size:13px; color: #c7c8c2; margin: 0 12px 20px 0;}
+.shadowBoxSmal p{padding:12px 0 6px 0; margin:0; font-size:14px; color: #000;}
+
+.shadowCont {padding: 0 18px; background: url(../Images/shadowBg.png) repeat-y top left; width: 367px;}
+.shadowContSmal {padding: 0 22px; background: url(../Images/shadowBg.png) repeat-y top left; width: 207px;height:300px;}
+.detailCont {padding: 10px; margin:0; font-size:12px;}
+.detailCont .cartRow {margin:0!important; font-size: 13px;}
+.detailCont .cartRow {border-bottom: 1px solid #c2c2c2;}
+.detailCont .price {width: 110px;}
+.blueColr {color: #62aa9f;}
+
+/***** Form CSS *****/
+.formCont {margin: 0; padding: 0 0 10px 0; border-bottom:1px solid #c2c2c2;}
+.formCont .formRow {margin: 10px 0 0 0;}
+.formCont label {width: 140px; float: left;}
+.formCont select, .formCont textfield {border:1px solid #c2c2c2;}
+
+
+.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden;}
+.clearfix{display:block;}
+
+
+ul#thumblist{display:block; margin: 10px 0 0 0; padding: 0;}
+ul#thumblist li{float:left; list-style:none; width: 71px; padding:2px; margin: 0 15px 10px 0;}
+ul#thumblist li a{display:block;border:1px solid #c2c4c3;}
+ul#thumblist li img {padding:2px;}
+ul#thumblist li a.zoomThumbActive{border:1px solid #868686;}
+
+
+
+.jqzoom{
+
+	text-decoration:none;
+	float:left;
+}
+.rollTxt{color: #9b9a96; text-align: center; font: italic 13px Tahoma, Arial, Helvetica, sans-serif; padding: 15px 0 5px 0; margin:0;}
+
+
+.divTable
+{
+    display: table;
+    border-spacing: 5px; /*cellspacing:poor IE support for  this*/ /* border-collapse:separate;*/
+}
+.divHeaderRow
+{
+    border-bottom: 2px solid gray;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+.divRow
+{
+    display: table-row;
+}
+.divCell
+{
+    float: left; /*fix for  buggy browsers*/
+    display: table-column;
+}
+.innerFooter
+{
+	margin:0px;
+	padding:0 15px;
+	position:relative;
+	top:490px;
+	background:url(../Images/footerBG.gif) repeat-x 0 0;
+	height:39px;
+	font:12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+	min-width:1000px;
+}

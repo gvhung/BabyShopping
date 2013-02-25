@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA10D73D-1EA5-4B1A-B350-6A7B3C17A1F1}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BabyShopping.Web</RootNamespace>
+    <AssemblyName>BabyShopping.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Botton\addtocart.png" />
+    <Content Include="Content\Botton\back.png" />
+    <Content Include="Content\Botton\button-silver-bg.png" />
+    <Content Include="Content\Botton\buy.png" />
+    <Content Include="Content\Botton\cancel.png" />
+    <Content Include="Content\Botton\checkout.png" />
+    <Content Include="Content\Botton\delete.png" />
+    <Content Include="Content\Botton\login.png" />
+    <Content Include="Content\Botton\signup.png" />
+    <Content Include="Content\Botton\submit.png" />
+    <Content Include="Content\Header\Header-Menu-Background.gif" />
+    <Content Include="Content\Header\Header-Menu-Background.jpg" />
+    <Content Include="Content\Header\HLine.gif" />
+    <Content Include="Content\Images\babyswaddle.jpg" />
+    <Content Include="Content\Images\BlanketOnes.jpg" />
+    <Content Include="Content\Images\bodyBg.jpg" />
+    <Content Include="Content\Images\cartBtn.jpg" />
+    <Content Include="Content\Images\checkOut.jpg" />
+    <Content Include="Content\Images\Detail.jpg" />
+    <Content Include="Content\Images\BlanketOne.jpg" />
+    <Content Include="Content\Images\dropBg.png" />
+    <Content Include="Content\Images\dropBot.png" />
+    <Content Include="Content\Images\droptop.png" />
+    <Content Include="Content\Images\footerBG.gif" />
+    <Content Include="Content\Images\logo.gif" />
+    <Content Include="Content\Images\Lovely-Baby.jpg" />
+    <Content Include="Content\Images\navBG.gif" />
+    <Content Include="Content\Images\removeImg.jpg" />
+    <Content Include="Content\Images\rollimgThumb.jpg" />
+    <Content Include="Content\Images\rollimgThumb2.jpg" />
+    <Content Include="Content\Images\rollimgThumb3.jpg" />
+    <Content Include="Content\Images\rollimgThumb4.jpg" />
+    <Content Include="Content\Images\rollimgThumb5.jpg" />
+    <Content Include="Content\Images\roundBg.jpg" />
+    <Content Include="Content\Images\roundBg.png" />
+    <Content Include="Content\Images\roundbotbg.jpg" />
+    <Content Include="Content\Images\roundbotbg.png" />
+    <Content Include="Content\Images\roundbotLft.png" />
+    <Content Include="Content\Images\roundbotRght.png" />
+    <Content Include="Content\Images\roundLftbg.png" />
+    <Content Include="Content\Images\roundtopbg.png" />
+    <Content Include="Content\Images\roundtopLft.png" />
+    <Content Include="Content\Images\roundtopRght.png" />
+    <Content Include="Content\Images\shadowBg.png" />
+    <Content Include="Content\Images\shadowBg_s.png" />
+    <Content Include="Content\Images\shadowBot.png" />
+    <Content Include="Content\Images\shadowBot_s.png" />
+    <Content Include="Content\Images\shadowTop.png" />
+    <Content Include="Content\Images\shadowTop_s.png" />
+    <Content Include="Content\Images\spacer.gif" />
+    <Content Include="Content\Images\sprite.gif" />
+    <Content Include="Content\Images\thumb.jpg" />
+    <Content Include="Content\Images\thumb_small1.jpg" />
+    <Content Include="Content\Images\thumb_small2.jpg" />
+    <Content Include="Content\Images\thumb_small3.JPG" />
+    <Content Include="Content\Images\zoomloader.gif" />
+    <Content Include="Content\jquery.jqzoom.css" />
+    <Content Include="Content\Zoom\babyswaddle.jpg" />
+    <Content Include="Content\Zoom\BlanketOne.jpg" />
+    <Content Include="Content\Zoom\thumb_big2.jpg" />
+    <Content Include="Content\Zoom\thumb_big3.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\CheckOut.js" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\flexdropdown.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.6.js" />
+    <Content Include="Scripts\jquery.jqzoom-core.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\Login.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\Navigation.js" />
+    <Content Include="Scripts\Product.js" />
+    <Content Include="Scripts\ProductDetail.js" />
+    <Content Include="Scripts\Register.js" />
+    <Content Include="Scripts\ShoppingCart.js" />
+    <Content Include="Views\About\Claudia.aspx" />
+    <Content Include="Views\About\FAQ.aspx" />
+    <Content Include="Views\About\HushStory.aspx" />
+    <Content Include="Views\About\PureCotton.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Home\Login.aspx" />
+    <Content Include="Views\Home\Register.aspx" />
+    <Content Include="Views\Product\BabyProduct.aspx" />
+    <Content Include="Views\Product\ProductDetail.aspx" />
+    <Content Include="Views\Shared\Footer.ascx" />
+    <Content Include="Views\Shared\Header.ascx" />
+    <Content Include="Views\Shop\ChangeAddress.aspx" />
+    <Content Include="Views\Shop\CheckOut.aspx" />
+    <Content Include="Views\Shop\ShoppingCart.aspx" />
+    <Content Include="Views\Shop\TermCondition.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\Class.css" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Inner.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Payment.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BabyShop.DataTransferObjects\BabyShop.DataTransferObjects.csproj">
+      <Project>{0EB5FD41-F42D-47F7-A357-382EC678019E}</Project>
+      <Name>BabyShop.DataTransferObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BabyShop.Utilities\BabyShop.Utilities.csproj">
+      <Project>{6A0755D5-62B5-4D70-BBDF-671DE4B90ECD}</Project>
+      <Name>BabyShop.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1677</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/BabyShopping</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

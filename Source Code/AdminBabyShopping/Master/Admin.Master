@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="AdminBabyShopping.Master.Admin" %>
+
+<%@ Register TagPrefix="BMenu" TagName="BM" Src="~/UserControl/BabyMenu.ascx" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <script src="../Scripts/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="../Scripts/menu.js" type="text/javascript"></script>
+    <link href="../Styles/menu.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/Class.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <!-- Drop Down Menu -->
+    <div id="wraper">
+        <div class="Header">
+            <div class="main-container">
+                <div class="logo fl">
+                    <img id="Img2" src="../Images/logo.gif" runat="server" alt="" /></div>
+              
+                    <div id="menu">
+                        <BMenu:BM ID="BabyMenu" runat="server" />
+                    </div>
+              
+            </div>
+        </div>
+        <div class="inner-section">
+            <div class="container">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div class="cl">
+        </div>
+        <div class="footer">
+            <div class="main-container">
+                <div class="fr padT10">
+                    &copy; 2011 Hush Pure Sleep</div>
+            </div>
+        </div>
+        <div class="cl">
+        </div>
+    </div>
+    </form>
+</body>
+</html>
