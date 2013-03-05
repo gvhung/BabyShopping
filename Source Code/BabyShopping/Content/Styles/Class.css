@@ -681,6 +681,7 @@ INPUT.submit
     width:90px;
     border:0px;
      background-image: url('../../Content/Images/Detail.jpg');
+    cursor: pointer;     
 }
 
 .addToCart
@@ -689,4 +690,5 @@ INPUT.submit
      width:134px;
      border:0px;
      background-image: url('../../Content/Images/cartBtn.jpg');
+    cursor: pointer;
 }
