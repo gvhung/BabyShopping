@@ -244,6 +244,7 @@ flexmenu1
     position: relative;  
     left:0%;
     margin:0px;
+    margin-top: -3px;
     top:0px;
     background: url(../../Content/Images/dropBg.png) repeat-y top left;
     }
