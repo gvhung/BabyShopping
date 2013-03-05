@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
-using BabyShop.DataTransferObjects;
+using BabyShop.Models;
 
 namespace BabyShopping.Web.Controllers
 {
@@ -20,7 +20,7 @@ namespace BabyShopping.Web.Controllers
             serializer.RecursionLimit = recursionDepth;
             return serializer.Serialize(obj);
         }
-        public void SetLoginSession(User user)
+        public void SetLoginSession(UserModel user)
         {
             Session["IsLoggedIn"] = true;
             Session["userId"] = user.MLoginID;
@@ -41,7 +41,7 @@ namespace BabyShopping.Web.Controllers
                     HttpContext.Session[CartSessionKey] = HttpContext.User.Identity.Name;
                 }
                 else
-                {                    // Generate a new random GUID using System.Guid class.                         
+                {   // Generate a new random GUID using System.Guid class.                         
                     Guid tempCartId = Guid.NewGuid();
                     HttpContext.Session[CartSessionKey] = tempCartId.ToString();
                 }

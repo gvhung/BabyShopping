@@ -17,15 +17,15 @@ namespace BabyShopping.Web
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional }, // Parameter defaults
+                new[] { "BabyShopping.Web.Controllers"}
             );
-
         }
 
         protected void Application_Start()
         {
             // Code that runs on application startup
-            string serviceURL = ConfigurationManager.AppSettings[AppConstants.SERVICE_URL].ToString();
+            //string serviceURL = ConfigurationManager.AppSettings[AppConstants.SERVICE_URL].ToString();
             //ServiceFactory.InitializeServiceFactory(serviceURL);
 
             AreaRegistration.RegisterAllAreas();

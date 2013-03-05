@@ -14,15 +14,23 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabyShop.ServiceImplementation", "BabyShop.ServiceImplementation\BabyShop.ServiceImplementation.csproj", "{AFBFE1B5-EDC4-4FD6-BBDD-BF902B879A83}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabyShop.Service", "BabyShop.Service\BabyShop.Service.csproj", "{3087937D-C59D-47E7-9ED2-1CAFB951F25A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{53FB9641-520E-46C5-8140-212C7BFD2DDB} = {53FB9641-520E-46C5-8140-212C7BFD2DDB}
-	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BabyShopService", "http://localhost/BabyShopService", "{53FB9641-520E-46C5-8140-212C7BFD2DDB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonLayer", "CommonLayer", "{FBAA30D3-7ECD-4DC6-82B6-0BE2393B5773}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabyShop.Utilities", "BabyShop.Utilities\BabyShop.Utilities.csproj", "{6A0755D5-62B5-4D70-BBDF-671DE4B90ECD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UILayer", "UILayer", "{F77BBFEB-195E-4105-9F23-C2358C31D0CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{E30AD6F5-D506-41A1-BA8D-AB056F9E23D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{DF3937D7-71CD-473D-8359-B1D0963C5487}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PersistenceLayer", "PersistenceLayer", "{82A28619-7D60-4BC4-8F85-8EFF58AF44D0}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BabyShopService", "http://localhost/BabyShopService", "{04652FB0-9063-4315-8C3F-6E3DB19D9624}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		ProjectReferences = "{6A0755D5-62B5-4D70-BBDF-671DE4B90ECD}|BabyShop.Utilities.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/BabyShopService"
 		Debug.AspNetCompiler.PhysicalPath = "BabyShopService\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\BabyShopService\"
@@ -40,41 +48,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BabyShopService", "http://l
 		SlnRelativePath = "BabyShopService\"
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonLayer", "CommonLayer", "{FBAA30D3-7ECD-4DC6-82B6-0BE2393B5773}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabyShop.Models", "BabyShopping.Models\BabyShop.Models.csproj", "{27AE5EDD-DB00-4007-A5DB-4A827BA0C1C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabyShop.Utilities", "BabyShop.Utilities\BabyShop.Utilities.csproj", "{6A0755D5-62B5-4D70-BBDF-671DE4B90ECD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UILayer", "UILayer", "{F77BBFEB-195E-4105-9F23-C2358C31D0CC}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{E30AD6F5-D506-41A1-BA8D-AB056F9E23D6}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{DF3937D7-71CD-473D-8359-B1D0963C5487}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PersistenceLayer", "PersistenceLayer", "{82A28619-7D60-4BC4-8F85-8EFF58AF44D0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabyShop.DataTransferObjects", "BabyShop.DataTransferObjects\BabyShop.DataTransferObjects.csproj", "{0EB5FD41-F42D-47F7-A357-382EC678019E}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BabyShopping", "BabyShopping\", "{CAF1B478-B475-43BA-8278-BCAA8310C504}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/BabyShopping"
-		Debug.AspNetCompiler.PhysicalPath = "BabyShopping\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\BabyShopping\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/BabyShopping"
-		Release.AspNetCompiler.PhysicalPath = "BabyShopping\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\BabyShopping\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "50384"
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabyShopping.Web", "BabyShopping.Web\BabyShopping.Web.csproj", "{FA10D73D-1EA5-4B1A-B350-6A7B3C17A1F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BabyShopping", "BabyShopping\BabyShopping.csproj", "{F6BE80B0-D365-402E-85B3-8180AD6DDC75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -106,26 +82,22 @@ Global
 		{3087937D-C59D-47E7-9ED2-1CAFB951F25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3087937D-C59D-47E7-9ED2-1CAFB951F25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3087937D-C59D-47E7-9ED2-1CAFB951F25A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53FB9641-520E-46C5-8140-212C7BFD2DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53FB9641-520E-46C5-8140-212C7BFD2DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53FB9641-520E-46C5-8140-212C7BFD2DDB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{53FB9641-520E-46C5-8140-212C7BFD2DDB}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{6A0755D5-62B5-4D70-BBDF-671DE4B90ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6A0755D5-62B5-4D70-BBDF-671DE4B90ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A0755D5-62B5-4D70-BBDF-671DE4B90ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A0755D5-62B5-4D70-BBDF-671DE4B90ECD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0EB5FD41-F42D-47F7-A357-382EC678019E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0EB5FD41-F42D-47F7-A357-382EC678019E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0EB5FD41-F42D-47F7-A357-382EC678019E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0EB5FD41-F42D-47F7-A357-382EC678019E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CAF1B478-B475-43BA-8278-BCAA8310C504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAF1B478-B475-43BA-8278-BCAA8310C504}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAF1B478-B475-43BA-8278-BCAA8310C504}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAF1B478-B475-43BA-8278-BCAA8310C504}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{FA10D73D-1EA5-4B1A-B350-6A7B3C17A1F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA10D73D-1EA5-4B1A-B350-6A7B3C17A1F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA10D73D-1EA5-4B1A-B350-6A7B3C17A1F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA10D73D-1EA5-4B1A-B350-6A7B3C17A1F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04652FB0-9063-4315-8C3F-6E3DB19D9624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04652FB0-9063-4315-8C3F-6E3DB19D9624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04652FB0-9063-4315-8C3F-6E3DB19D9624}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{04652FB0-9063-4315-8C3F-6E3DB19D9624}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{27AE5EDD-DB00-4007-A5DB-4A827BA0C1C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27AE5EDD-DB00-4007-A5DB-4A827BA0C1C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27AE5EDD-DB00-4007-A5DB-4A827BA0C1C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27AE5EDD-DB00-4007-A5DB-4A827BA0C1C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6BE80B0-D365-402E-85B3-8180AD6DDC75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6BE80B0-D365-402E-85B3-8180AD6DDC75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6BE80B0-D365-402E-85B3-8180AD6DDC75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6BE80B0-D365-402E-85B3-8180AD6DDC75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,12 +106,11 @@ Global
 		{BBEDCAD2-53EE-4264-AA65-ECE0736BF963} = {82A28619-7D60-4BC4-8F85-8EFF58AF44D0}
 		{DF26FBA3-D79A-48B7-8BA1-1EA520F72173} = {82A28619-7D60-4BC4-8F85-8EFF58AF44D0}
 		{800F1AC8-AEAB-4806-AC03-830D444970AC} = {DF3937D7-71CD-473D-8359-B1D0963C5487}
-		{0EB5FD41-F42D-47F7-A357-382EC678019E} = {DF3937D7-71CD-473D-8359-B1D0963C5487}
 		{9D96C441-E338-45BB-B97B-366A082EC292} = {E30AD6F5-D506-41A1-BA8D-AB056F9E23D6}
-		{53FB9641-520E-46C5-8140-212C7BFD2DDB} = {9D96C441-E338-45BB-B97B-366A082EC292}
+		{27AE5EDD-DB00-4007-A5DB-4A827BA0C1C1} = {E30AD6F5-D506-41A1-BA8D-AB056F9E23D6}
 		{AFBFE1B5-EDC4-4FD6-BBDD-BF902B879A83} = {9D96C441-E338-45BB-B97B-366A082EC292}
+		{04652FB0-9063-4315-8C3F-6E3DB19D9624} = {9D96C441-E338-45BB-B97B-366A082EC292}
 		{6A0755D5-62B5-4D70-BBDF-671DE4B90ECD} = {FBAA30D3-7ECD-4DC6-82B6-0BE2393B5773}
-		{CAF1B478-B475-43BA-8278-BCAA8310C504} = {F77BBFEB-195E-4105-9F23-C2358C31D0CC}
-		{FA10D73D-1EA5-4B1A-B350-6A7B3C17A1F1} = {F77BBFEB-195E-4105-9F23-C2358C31D0CC}
+		{F6BE80B0-D365-402E-85B3-8180AD6DDC75} = {F77BBFEB-195E-4105-9F23-C2358C31D0CC}
 	EndGlobalSection
 EndGlobal

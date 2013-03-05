@@ -1,12 +1,12 @@
-﻿using BabyShop.DataTransferObjects;
-using BabyShop.Service.BabyShopWebService;
+﻿using BabyShop.Data;
+using BabyShop.Models;
 using BabyShop.Service.Utility;
 
 namespace BabyShop.Service.Converter
 {
     public static class LocalToModel
     {
-        public static EShoppingCart ToModel(this ShoppingCart cart)
+        public static EShoppingCart ToModel(this ShoppingCartModel cart)
         {
             if (cart != null)
             {
@@ -22,7 +22,7 @@ namespace BabyShop.Service.Converter
                 return null;
             }
         }
-        public static EUser ToModel(this User user)
+        public static EUser ToModel(this UserModel user)
         {
             if (user != null)
             {

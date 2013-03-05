@@ -1,16 +1,16 @@
-﻿using BabyShop.DataTransferObjects;
-using BabyShop.Service.BabyShopWebService;
+﻿using BabyShop.Data;
+using BabyShop.Models;
 using BabyShop.Service.Utility;
 
 namespace BabyShop.Service.Converter
 {
    public static class ModelToLocal
     {
-       public static ShoppingCart ToLocal(this EShoppingCart productCart)
+       public static ShoppingCartModel ToLocal(this EShoppingCart productCart)
        {
            if (productCart != null)
            {
-               ShoppingCart toReturn = new ShoppingCart();
+               ShoppingCartModel toReturn = new ShoppingCartModel();
                toReturn.ProductCategoryName = productCart.ProductCategoryName.NullToEmpty();
                toReturn.ShoppingCartProductPrice = productCart.ShoppingCartProductPrice;
                toReturn.ShoppingCartQuantity = productCart.ShoppingCartQuantity;
@@ -21,11 +21,11 @@ namespace BabyShop.Service.Converter
            }
            return null;
        }
-       public static User ToLocal(this EUser user)
+       public static UserModel ToLocal(this EUser user)
        {
            if (user != null)
            {
-               User toReturn = new User();
+               UserModel toReturn = new UserModel();
                toReturn.MLoginID = user.MLoginID;
                toReturn.MLoginFirstName = user.MLoginFirstName.NullToEmpty();
                toReturn.MLoginLastName = user.MLoginLastName.NullToEmpty();

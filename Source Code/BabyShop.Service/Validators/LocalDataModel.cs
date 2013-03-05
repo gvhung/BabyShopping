@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using BabyShop.DataTransferObjects;
+using BabyShop.Models;
 
 namespace BabyShop.Service.Validators
 {
@@ -22,7 +22,7 @@ namespace BabyShop.Service.Validators
 
     internal static class LocalDataModel
     {
-        internal static bool Validate(this User user, UseralidationType validationType, out List<DataError> dataError)
+        internal static bool Validate(this UserModel user, UseralidationType validationType, out List<DataError> dataError)
         {
             dataError = new List<DataError>();
             switch (validationType)

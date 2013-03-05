@@ -1,0 +1,692 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+body {
+	background:url(../../Content/Images/bodyBg.jpg) repeat;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin:0px;
+	padding:0px;
+}
+h1, h2, h3, h4, h5, h6, ul, li {
+	margin:0px;
+	padding:0px;
+}
+h1{font: normal 36px "Trebuchet MS", Arial, Helvetica, sans-serif; margin:0; padding: 0 0 20px 0;}
+h2{font: italic 22px "Trebuchet MS", Arial, Helvetica, sans-serif; margin:0; padding: 0 0 10px 0;}
+h3{font: normal 20px "Times New Roman", Times, serif; margin:0; padding: 0 0 20px 0; text-transform: uppercase}
+h4{font: normal 16px "Times New Roman", Times, serif; margin:0; padding: 10px 0 0 0;}
+
+a {
+	text-decoration:none;
+	color: #85beb8;
+}
+a:hover {
+	text-decoration:none;
+}
+a img {
+	border:0px;
+}
+.fl {
+	float:left!important;
+}
+.fr {
+	float:right!important;
+}
+.cl {
+	clear:both;
+}
+.mrgnTop10 {margin-top: 10px!important;}
+.abs {
+	position:absolute;
+}
+.rel {
+	position:relative;
+}
+.padT10 {
+	padding-top:10px;
+}
+/* Main classes */
+
+
+.Header {
+	margin:0px;
+	padding:0 15px;
+	background:url(../../Content/Images/navBG.gif) repeat-x 0 0;
+	height:82px;
+	min-width:1000px;
+}
+.main-container {
+	margin:0px auto;
+	padding:0px;
+	width:1000px;
+	position:relative;
+}
+.main-footer
+{ 
+	position:relative;
+	width:1000px;
+	margin-bottom:24%;
+}
+.logo {
+	position:absolute;
+	left:0px;
+	z-index:1000 !important;
+}
+.main-section-midd {
+	/* background:url(../../Content/Images/Lovely-Baby.jpg) no-repeat center -67px; */
+	min-width:1000px;
+	padding:0 15px;
+
+}
+.middhomesection {
+	/* height:750px; */
+}
+.slogen {
+	font:24px"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+	text-align:right;
+	padding-top:550px;
+}
+.nav {
+	margin:0px;
+	padding:15px 0 0 150px;
+}
+.nav ul {
+	margin:0px;
+	padding:0px;
+}
+.nav li {
+	margin:0px;
+	padding:15px;
+	float:left;
+	list-style:none;
+}
+.nav li a {
+	margin:0px;
+	padding:0px;
+	font:normal 20px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+}
+.nav li a:hover {
+	color:#98d6d1;
+}
+.searchContainer {
+	padding:30px 0 0 0
+}
+.search input {
+	background:url(../../Content/Images/sprite.gif) no-repeat 0px -31px;
+	width:140px;
+	height:30px;
+	border:0px;
+	outline:none;
+	padding:0 5px 0 5px;
+	font:12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+	float:left;
+}
+.search input.btn {
+	background:url(../../Content/Images/sprite.gif) no-repeat -152px -31px;
+	width:20px;
+	height:30px;
+	float:left;
+	margin-right:10px;
+	cursor:pointer;
+}
+.addCart {
+	font:bold 14px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#97d4d5;
+	margin-top:-15px;
+	text-align:center;
+}
+.addCart a img {
+	background:url(../../Content/Images/sprite.gif) no-repeat -69px 0px;
+	width:26px;
+	height:28px;
+	margin-top:-4px;
+}
+.footer {
+	margin:0px;
+	padding:0 15px;
+	background:url(../../Content/Images/footerBG.gif) repeat-x 0 0;
+	height:39px;
+	font:12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+	position:relative;
+	min-width:1000px;
+}
+.footerLinks {
+	margin:0px;
+	padding:0px;
+}
+.footerLinks ul {
+	margin:0px;
+	padding:0px;
+}
+.footerLinks li {
+	margin:0px;
+	padding:10px 5px 0 5px;
+	float:left;
+	list-style:none;
+}
+.footerLinks li a {
+	margin:0px;
+	padding:0px;
+	font:bold 13px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+}
+.footerLinks li a:hover {
+	color:#ccc;
+}
+.footerLinks li a img {
+	background:url(../../Content/Images/sprite.gif) no-repeat 0 10000px;
+	margin:-2px 5px 0 5px;
+}
+.footerLinks li a img.twitter {
+	background-position:0 0;
+	width:10px;
+	height:14px;
+}
+.footerLinks li a img.facebook {
+	background-position:-20px 0;
+	width:10px;
+	height:17px;
+}
+.footerLinks li a img.thirdicon {
+	background-position:-39px 0;
+	width:16px;
+	height:20px;
+}
+
+/**** Hush Content *****/
+.inner-section { width:970px; padding:0 15px; margin: 0 auto; position: relative;} 
+.container {width: 820px; margin: 30px 0 30px 135px;min-height:450px; /*position: absolute; top: 30px; right: 20px;*/}
+.roundedTop {background: url(../../Content/Images/roundtopbg.png) repeat-x top left; width: 810px; height: 34px;}
+.roundedBg {background: url(../../Content/Images/roundBg.png) repeat-y top left; width: 740px; padding: 10px 35px;}
+.roundedBot {background: url(../../Content/Images/roundBotbg.png) repeat-x top left; width: 810px; height: 34px;}
+
+/**** Shopping Cart *****/
+.cartCnt {margin:0; padding:0;}
+.cartRow{border-bottom:1px solid #000; padding: 0 0 5px 0; font: normal 12px Arial, Helvetica, sans-serif; margin: 0 0 10px 0;}
+.cartLstng{background-color: #f3f2f0; margin: 0 0 10px 0;  padding: 10px 0 0 10px; text-transform: uppercase}
+.status {width: 80px;}
+.price {width: 105px;}
+.item {width: 430px; font: normal 14px "Times New Roman", Times, serif;}
+.item img {vertical-align: middle; margin: 0 10px 0 0;}
+.subTotal{background-color: #cfd0cb; padding: 10px;}
+.total{background-color: #87877d; color:#fff; padding: 10px;}
+.total span{font: normal 24px "Times New Roman", Times, serif;}
+.cntShopng{padding: 10px 0 0 0;}
+.cntShopng a {text-decoration: underline;}
+.cntShopng a:hover {text-decoration: none;}
+#Header .autocompletesuggestion {position: absolute; width: 332px; top: 127px; left: 830.5px!important; }
+flexmenu1
+
+/***** Drop Down ******/
+.flexdropTopMenu
+    {
+    top:50%;  
+    position: relative;
+    background:red;    
+    left:25%;
+   
+    }
+.flexdropdownmenu, .flexdropdownmenu ul{ /*topmost and sub ULs, respectively*/
+                                        font: normal 12px Tahoma, "Times New Roman", Times, Serif;
+                                         margin: 0;
+                                         padding:0px;
+                                         position:absolute; 
+                                         top:0px; 
+                                         list-style-type: none; 
+                                         visibility: hidden; 
+                                         display: none;}
+.flexdropdownmenu li
+{
+    position: relative;  
+    left:0%;
+    margin:0px;
+    top:0px;
+    background: url(../../Content/Images/dropBg.png) repeat-y top left;
+    }
+.flexdropdownmenu li a
+{
+    display: block;
+    position:relative;
+    width: 145px; /*width of menu (not including side paddings)*/ 
+    color: #5b5147; 
+    text-decoration: none; 
+    padding: 7px 15px; 
+    font-weight: bold;}
+    
+* html .flexdropdownmenu li{ /*IE6 CSS hack*/
+                             display: none; 
+                             width: 170px; /*width of menu (include side paddings of LI A*/}
+.flexdropdownmenu li a:hover, .flexdropdownmenu li.selected>a
+{
+    color: #fff;
+    }
+.rightarrowclass
+{
+    position: absolute; 
+    top: 6px; 
+    right: 5px;} 
+
+/****** Shadow Box ********/
+.shadowTop {background: url(../../Content/Images/shadowTop.png) no-repeat top left; width: 403px; height: 14px;}
+.shadowBot {background: url(../../Content/Images/shadowBot.png) no-repeat top left; width: 403px; height: 14px;}
+.shadowTopSmal {background: url(../../Content/Images/shadowTop_s.png) no-repeat top left; width: 260px; height: 14px;}
+
+.shadowBotSmal {background: url(../../Content/Images/shadowBot_s.png) no-repeat top left; width: 260px; height: 14px;}
+.shadowBoxSmal{font-size:13px; color: #c7c8c2; margin: 0 12px 20px 0;}
+.shadowBoxSmal p{padding:12px 0 6px 0; margin:0; font-size:14px; color: #000;}
+
+.shadowCont {padding: 0 18px; background: url(../../Content/Images/shadowBg.png) repeat-y top left; width: 367px;}
+.shadowContSmal {padding: 0 22px; background: url(../../Content/Images/shadowBg.png) repeat-y top left; width: 207px;height:300px;}
+.detailCont {padding: 10px; margin:0; font-size:12px;}
+.detailCont .cartRow {margin:0!important; font-size: 13px;}
+.detailCont .cartRow {border-bottom: 1px solid #c2c2c2;}
+.detailCont .price {width: 110px;}
+.blueColr {color: #62aa9f;}
+
+/***** Form CSS *****/
+.formCont {margin: 0; padding: 0 0 10px 0; border-bottom:1px solid #c2c2c2;}
+.formCont .formRow {margin: 10px 0 0 0;}
+/* .formCont label {width: 140px; float: left;} */
+.formCont select, .formCont textfield {border:1px solid #c2c2c2;}
+
+
+
+
+
+ul#thumblist{display:block; margin: 10px 0 0 0; padding: 0;}
+ul#thumblist li{float:left; list-style:none; width: 71px; padding:2px; margin: 0 15px 10px 0;}
+ul#thumblist li a{display:block;border:1px solid #c2c4c3;}
+ul#thumblist li img {padding:2px;}
+ul#thumblist li a.zoomThumbActive{border:1px solid #868686;}
+
+
+
+.jqzoom{
+
+	text-decoration:none;
+	float:left;
+}
+.rollTxt{color: #9b9a96; text-align: center; font: italic 13px Tahoma, Arial, Helvetica, sans-serif; padding: 15px 0 5px 0; margin:0;}
+
+
+.divTable
+{
+    display: table;
+    border-spacing: 5px; /*cellspacing:poor IE support for  this*/ /* border-collapse:separate;*/
+}
+.divHeaderRow
+{
+    border-bottom: 2px solid gray;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
+}
+.divRow
+{
+    display: table-row;
+}
+.divCell
+{
+    float: left; /*fix for  buggy browsers*/
+    display: table-column;
+}
+.innerFooter
+{
+	margin:0px;
+	padding:0 15px;
+	position:relative;
+	top:490px;
+	background:url(../../Content/Images/footerBG.gif) repeat-x 0 0;
+	height:39px;
+	font:12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#fff;
+	min-width:1000px;
+}
+
+.lstView
+{
+    width: 100%;
+    margin-top: 1px;
+    border-spacing: 0px;
+    scrollbar-base-color: #8E8E8E;
+}
+
+.lstView ul
+{
+    height:auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.lstView ul li:hover
+{
+   
+}
+.header-bar
+{
+    height: 85px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+}
+.header .logo
+{
+    margin: 18px 0 0 -1px;
+    float: left;
+}
+.header .titleMenu span
+{
+    margin: 18px 0 0 45px;
+    float: left;
+    text-align: center;
+    font-size: 35px;
+    color: #4D167F;
+    font-weight: bold;
+}
+#wrapper
+{
+    position: relative;
+    min-height:300px;
+}
+.signin-box
+{
+    width: 500px;
+    background: #E5E5CC;
+    border: 3px solid #5B5147;
+    height:250px;
+    left:40%;
+    position:relative;
+}
+.signin-box label
+{
+    display: block;
+   
+}
+.lblinput
+{
+    width: 90%;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 .5em;
+    display: block;
+}
+.email-label
+{
+    font-weight: bold;
+    margin: 0 0 .5em;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    color:#808076;
+}
+.signin-label
+{
+    font-weight: bold;
+     font-size: 20px;
+    margin: 0 0 .5em;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.e-button-submit
+{
+    border: 1px solid #DD4B39;
+    background:#DD4B39;
+    color: #fff;
+    width:85%;
+    height:30px;
+    text-shadow: 0 1px rgba(0,0,0,0.1);
+    cursor:pointer;
+    font-size:13px;
+    font-weight:bold;
+}
+.e-button-signup
+{
+    border: 1px solid #DD4B39;
+    background:#DD4B39;
+    color: #fff;
+    width:85%;
+    height:30px;
+    text-shadow: 0 1px rgba(0,0,0,0.1);
+    cursor:pointer;
+    font-size:13px;
+    font-weight:bold;
+}
+span.msg-error
+{
+    font-size: 12px;
+    color: #DD4B39;
+    font-weight:lighter;
+}
+.header-label
+{
+    font-size: 20px;
+    color: #808076;
+    font-weight: bold; 
+}
+TD.BoxHeader
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #FFFFFF;
+    padding: 0px 10px 0px 10px;
+    vertical-align: middle;
+    background-image: url(../../Content/Header/Header-Menu-Background.jpg);
+    height: 32px;
+}
+TD.FormDetailCell
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    color: #383D50;
+    padding: 0px 4px 0px 4px;
+    text-align: justify;
+    vertical-align: middle;
+    height: 20px;
+    border: 0px;
+}
+TABLE.TableFormInside
+{
+    border-collapse: collapse;
+    border: 0px;
+    margin: 0;
+    width: 100%;
+}
+TD.FormDetailBoxHeader
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #383D50;
+    padding: 5px 0px 0px 5px;
+    vertical-align: top;
+    height: 30px;
+}
+
+TD.AbowLine
+{
+    height: 20px;
+    padding: 0px 0px 0px 0px;
+   
+}
+TD.CellLine
+{
+    padding: 0px 0px 0px 0px;
+    text-align: left;
+    height: 4px;
+    margin: 0px;
+    vertical-align: middle;
+    border-bottom: 1px solid #808076;
+     width:500px;
+    background-repeat: no-repeat;
+}
+TD.BelowLine
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 11px;
+    color: #383D50;
+    padding: 0px 0px 0px 0px;
+    text-align: left;
+    height: 22px;
+}
+TD.FormDetailBoxHeader
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #383D50;
+    padding: 5px 0px 0px 5px;
+    vertical-align: top;
+    height: 30px;
+}
+TD.FormCellRight
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 11px;
+    color: #383D50;
+    padding: 0px 0px 0px 4px;
+    text-align: left;
+    height: 22px;
+    width: 78%;
+    vertical-align: middle;
+}
+TD.CelLeft
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    color: #383D50;
+    padding: 0px 4px 0px 60px;
+    text-align: left;
+    height: 22px;
+}
+TD.CellRight
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    color: #383D50;
+    padding: 0px 0px 0px 4px;
+    text-align: left;
+    height: 22px;
+    width: 78%;
+    vertical-align:middle;
+}
+TD.CelLeftCheck
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 11px;
+    color: #383D50;
+    padding: 0px 4px 0px 1px;
+    text-align: left;
+    width: 22%;
+    height: 22px;
+}
+TD.BoxFooterLeft
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 11px;
+    color: #383D50;
+    padding: 0px 10px 0px 10px;
+    vertical-align: middle;
+    background-color: #4F4E4C;
+    border-top: solid 1px #A8ACB6;
+    height: 26px;
+    text-align: left;
+    width:92%;
+}
+TABLE.BoxTable
+{
+    border-collapse: collapse;
+    border-right: solid 1px #A8ACB6;
+    border-left: solid 1px #A8ACB6;
+    border-top: solid 0px #A8ACB6;
+    border-bottom: solid 1px #A8ACB6;
+    background:#ffffff;
+}
+SELECT.DropDown
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    border: solid 1px #737C91;
+    width: 34%;
+    vertical-align: middle;
+    color: #323F51;
+    height: 30px;
+}
+a.link-button-regular
+{
+    background-color: transparent;
+    background-image: url('../../Content/Bottom/button-silver-bg.png');
+    border: 1px solid #DD4B39;
+    color: #ffffff;
+    cursor: pointer;
+    float: left;
+    font-weight: bold;
+    height: 18px;
+    line-height: 15px;
+    margin: 0px 7px 0px 0px;
+    padding: 5px 10px 6px 7px;
+    text-decoration: none;
+    text-align: center;
+    }
+INPUT.TextBox
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    border: solid 1px #737C91;
+    width: 214px;
+    vertical-align: middle;
+    color: #323F51;
+    height: 25px;
+    padding: 2px 0px 0px 3px;
+    left:10%;
+}
+INPUT.TextBoxWithoutWidth
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    border: solid 1px #737C91;
+    vertical-align: middle;
+    color: #323F51;
+    height: 25px;
+    padding: 2px 0px 0px 3px;
+}
+
+INPUT.submit
+{
+    height:45px;
+    width:80%;
+    border:0px;
+     background-image: url('../../Content/Bottom/buy.png');
+}
+
+.productDetail
+{
+     height:20px;
+    width:90px;
+    border:0px;
+     background-image: url('../../Content/Images/Detail.jpg');
+}
+
+.addToCart
+{
+     height:31px;
+     width:134px;
+     border:0px;
+     background-image: url('../../Content/Images/cartBtn.jpg');
+}

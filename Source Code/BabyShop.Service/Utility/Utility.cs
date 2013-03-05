@@ -1,10 +1,15 @@
-﻿namespace BabyShop.Service.Utility
+﻿using System.Text;
+using System.Security.Cryptography;
+using System.IO;
+using System;
+namespace BabyShop.Service.Utility
 {
     public static class Utility
     {
         //private byte[] IV = new byte[] { 0x12, 0x34, 0x56, 120, 0x90, 0xab, 0xcd, 0xef };
         //private byte[] key = new byte[0];
-        //public string Encrypt(string queryStringuserId, string SEEncryptionKey)
+        
+        //public static string Encrypt(string queryStringuserId, string SEEncryptionKey)
         //{
         //    string str;
         //    try
@@ -24,7 +29,7 @@
         //    }
         //    return str;
         //}
-        //public string Decrypt(string stringToDecrypt, string SEEncryptionKey)
+        //public static string Decrypt(string stringToDecrypt, string SEEncryptionKey)
         //{
         //    string str;
         //    byte[] buffer = new byte[stringToDecrypt.Length];
