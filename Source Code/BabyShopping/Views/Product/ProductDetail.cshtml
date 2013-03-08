@@ -13,8 +13,6 @@
 <script src="@Url.Content("~/Content/Scripts/ProductDetail.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.jqzoom-core.js")" type="text/javascript"></script>
 <div class="inner-section">
-    <input id="ProductCartProductKId" name="Id" type="hidden" value="" />
-    <input id="ProductCartPrice" name="ProductCartPrice" type="hidden" value="" />
     <div class="shadowBox fl">
         <div class="shadowTop">
             &nbsp;</div>
@@ -77,7 +75,8 @@
                     <b>Ordering</b>
                 </div>
                 <br />
-                <form action="ShoppingCart" method="get" class="formCont">
+                <form action="/Shop/ShoppingCart" method="post" class="formCont">
+                <input id="hdnProductId" name = "ProductId" type="hidden" value="@Model.Id" />
                 <div class="formRow">
                     <label>
                         Size</label>&nbsp;&nbsp;
@@ -101,15 +100,15 @@
                 <div class="formRow">
                     <label>
                         Price</label>
-                    @Model.Price
+                    $@Model.Price
                     <div class="cl">
                     </div>
                 </div>
                 <div class="formRow">
                     <label>
                         Quantity</label>
-                    <input name="ProductCartQuantity" id="productQuantity" type="text" value="1" style="width: 50px;" />
-                    <input type="submit" value="" class="addToCart" />
+                    <input name="Quantity" id="Quantity" type="text" value="1" style="width: 50px;" />
+                    <input type="submit" value="" class="addToCart" id="btnAddToCart" />
                     <div class="cl">
                     </div>
                 </div>

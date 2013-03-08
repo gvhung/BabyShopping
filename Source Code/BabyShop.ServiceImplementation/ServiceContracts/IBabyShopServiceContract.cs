@@ -8,11 +8,9 @@ namespace BabyShop.ServiceImplementation.ServiceContracts
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.ServiceModel;
     using System.ServiceModel.Web;
-    using BabyShop.Data;
+    using BabyShop.CommonLayer.DataTransferObjects;
 
     /// <summary>
     /// Interface for definig the service contracts for presentation layer
@@ -24,23 +22,23 @@ namespace BabyShop.ServiceImplementation.ServiceContracts
     {
         [OperationContract]
         [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-        EUser ValidateUser(EUser user);
+        UserDTO ValidateUser(UserDTO user);
 
         [OperationContract]
         [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-        EUser GetUserDetails(int userId);
+        UserDTO GetUserDetails(int userId);
 
         [OperationContract]
         [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-        bool CreateUser(EUser user);
+        bool CreateUser(UserDTO user);
 
         [OperationContract]
         [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-        bool InsertProductCart(EShoppingCart product);
+        bool InsertProductCart(ShoppingCartDTO product);
 
         [OperationContract]
         [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-        List<EShoppingCart> GetShoppingCartIteim(string CartId);
+        List<ShoppingCartDTO> GetShoppingCartIteim(Guid CartId);
 
         [OperationContract]
         [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
@@ -48,6 +46,6 @@ namespace BabyShop.ServiceImplementation.ServiceContracts
 
         [OperationContract]
         [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json)]
-        int CountShoppingCartItems(string userId);
+        int CountCartItems(Guid cartId);
     }
 }

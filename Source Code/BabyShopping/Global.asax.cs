@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
 using System.Web.Mvc;
 using System.Web.Routing;
+using BabyShop.CommonLayer.Mapper;
+using BabyShop.CommonLayer.Unity;
+using BabyShop.CommonLayer.UnityExtension;
+using BabyShop.CommonLayer.Utilities;
+using Microsoft.Practices.Unity;
 
 namespace BabyShopping
 {
@@ -31,6 +33,15 @@ namespace BabyShopping
 
         protected void Application_Start()
         {
+            //Initializes unity container and registers interface with service classes 
+            BabyShopUnityContainerExtension.InitializeContainer();
+
+            //Creates mapping between Data transfer objects and persistence layer
+            BabyShopUnityContainer.Container.Resolve<IMapObject>().CreateMap();
+
+            string serviceURL = ConfigurationManager.AppSettings[AppConstants.SERVICE_URL].ToString();
+            ServiceFactory.InitializeServiceFactory(serviceURL);
+
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);

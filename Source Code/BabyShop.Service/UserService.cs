@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using BabyShop.Models;
 using BabyShop.Service.Validators;
-using BabyShop.Data;
-using BabyShop.Manager;
+using BabyShop.CommonLayer.DataTransferObjects;
+using BabyShop.BusinessLayer.Manager;
+
 namespace BabyShopping.Service
 {
     public static class UserService
@@ -11,21 +12,22 @@ namespace BabyShopping.Service
         {
             bool IsValidate = false;
             dataError = null;
-            EUser userDetail = new EUser();
+            UserDTO userDetail = new UserDTO();
             if (user.Validate(UseralidationType.LoginUser, out dataError))
             {
-                MUser userMgr = new MUser();
-                userDetail = userMgr.ValidateUser(new EUser { MLoginRightsUserID = user.MLoginRightsUserID, MLoginRightsPassword = user.MLoginRightsPassword });
-                if (userDetail != null)
-                {
-                    user.MLoginID = userDetail.MLoginID;
-                    IsValidate = true;
-                }
-                else
-                {
-                    IsValidate = false;
-                    dataError.Add(new DataError() { PropertyName = "Message", ErrorDescription = ErrorMessages.User.InValidCredential });
-                }
+                UserManager userMgr = new UserManager();
+                //userDetail = userMgr.ValidateUser(new UserDTO { MLoginRightsUserID = user.MLoginRightsUserID, MLoginRightsPassword = user.MLoginRightsPassword });
+                userDetail = null;
+                //if (userDetail != null)
+                //{
+                //    user.MLoginID = userDetail.MLoginID;
+                //    IsValidate = true;
+                //}
+                //else
+                //{
+                //    IsValidate = false;
+                //    dataError.Add(new DataError() { PropertyName = "Message", ErrorDescription = ErrorMessages.User.InValidCredential });
+                //}
                 return IsValidate;
             }
             return IsValidate;
@@ -33,22 +35,22 @@ namespace BabyShopping.Service
 
         public static UserModel GetUserDetails(int userId)
         {
-            EUser user = new EUser();
-            MUser userMgr = new MUser();
+            UserDTO user = new UserDTO();
+            UserManager userMgr = new UserManager();
             
-            user = userMgr.GetUserDetails(userId);
+            //user = userMgr.GetUserDetails(userId);
             UserModel toReturn = new UserModel();
 
             if (user != null)
             {   
-                toReturn.MLoginID = user.MLoginID;
-                toReturn.MLoginFirstName = user.MLoginFirstName;
-                toReturn.MLoginLastName = user.MLoginLastName;
-                toReturn.MLoginAddress = user.MLoginAddress;
-                toReturn.MLoginState = user.MLoginState;
-                toReturn.MLoginCountry = user.MLoginCountry;
-                toReturn.MLoginCity = user.MLoginCity;
-                toReturn.MLoginZip = user.MLoginZip;
+                //toReturn.MLoginID = user.MLoginID;
+                //toReturn.MLoginFirstName = user.MLoginFirstName;
+                //toReturn.MLoginLastName = user.MLoginLastName;
+                //toReturn.MLoginAddress = user.MLoginAddress;
+                //toReturn.MLoginState = user.MLoginState;
+                //toReturn.MLoginCountry = user.MLoginCountry;
+                //toReturn.MLoginCity = user.MLoginCity;
+                //toReturn.MLoginZip = user.MLoginZip;
             }
 
             return toReturn;
@@ -56,18 +58,18 @@ namespace BabyShopping.Service
 
         public static bool CreateUser(UserModel user)
         {
-            MUser userMgr = new MUser();
+            UserManager userMgr = new UserManager();
             bool status = false;
 
-            EUser toReturn = new EUser();
-            toReturn.MLoginID = user.MLoginID;
-            toReturn.MLoginFirstName = user.MLoginFirstName;
-            toReturn.MLoginLastName = user.MLoginLastName;
-            toReturn.MLoginAddress = user.MLoginAddress;
-            toReturn.MLoginState = user.MLoginState;
-            toReturn.MLoginCountry = user.MLoginCountry;
-            toReturn.MLoginCity = user.MLoginCity;
-            toReturn.MLoginZip = user.MLoginZip;
+            UserDTO toReturn = new UserDTO();
+            //toReturn.MLoginID = user.MLoginID;
+            //toReturn.MLoginFirstName = user.MLoginFirstName;
+            //toReturn.MLoginLastName = user.MLoginLastName;
+            //toReturn.MLoginAddress = user.MLoginAddress;
+            //toReturn.MLoginState = user.MLoginState;
+            //toReturn.MLoginCountry = user.MLoginCountry;
+            //toReturn.MLoginCity = user.MLoginCity;
+            //toReturn.MLoginZip = user.MLoginZip;
 
             status = userMgr.CreateUser(toReturn);
             return status;

@@ -66,13 +66,13 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BabyShop.Data\BabyShop.Data.csproj">
-      <Project>{DF26FBA3-D79A-48B7-8BA1-1EA520F72173}</Project>
-      <Name>BabyShop.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BabyShop.Manager\BabyShop.Manager.csproj">
+    <ProjectReference Include="..\BabyShop.BusinessLayer.Manager\BabyShop.BusinessLayer.Manager.csproj">
       <Project>{800F1AC8-AEAB-4806-AC03-830D444970AC}</Project>
-      <Name>BabyShop.Manager</Name>
+      <Name>BabyShop.BusinessLayer.Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BabyShop.CommonLayer.DataTransferObjects\BabyShop.CommonLayer.DataTransferObjects.csproj">
+      <Project>{DF26FBA3-D79A-48B7-8BA1-1EA520F72173}</Project>
+      <Name>BabyShop.CommonLayer.DataTransferObjects</Name>
     </ProjectReference>
     <ProjectReference Include="..\BabyShopping.Models\BabyShop.Models.csproj">
       <Project>{27AE5EDD-DB00-4007-A5DB-4A827BA0C1C1}</Project>

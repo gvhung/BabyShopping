@@ -50,17 +50,13 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BabyShop.Data\BabyShop.Data.csproj">
-      <Project>{DF26FBA3-D79A-48B7-8BA1-1EA520F72173}</Project>
-      <Name>BabyShop.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BabyShop.Manager\BabyShop.Manager.csproj">
+    <ProjectReference Include="..\BabyShop.BusinessLayer.Manager\BabyShop.BusinessLayer.Manager.csproj">
       <Project>{800F1AC8-AEAB-4806-AC03-830D444970AC}</Project>
-      <Name>BabyShop.Manager</Name>
+      <Name>BabyShop.BusinessLayer.Manager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BabyShop.Utilities\BabyShop.Utilities.csproj">
-      <Project>{6A0755D5-62B5-4D70-BBDF-671DE4B90ECD}</Project>
-      <Name>BabyShop.Utilities</Name>
+    <ProjectReference Include="..\BabyShop.CommonLayer.DataTransferObjects\BabyShop.CommonLayer.DataTransferObjects.csproj">
+      <Project>{DF26FBA3-D79A-48B7-8BA1-1EA520F72173}</Project>
+      <Name>BabyShop.CommonLayer.DataTransferObjects</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

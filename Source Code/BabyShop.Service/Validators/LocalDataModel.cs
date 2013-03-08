@@ -28,14 +28,14 @@ namespace BabyShop.Service.Validators
             switch (validationType)
             {
                 case UseralidationType.LoginUser:
-                    if (string.IsNullOrEmpty(user.MLoginRightsUserID))
-                    {
-                        dataError.Add(new DataError() { PropertyName = "MLoginRightsUserID", ErrorDescription = ErrorMessages.User.LOGINRIGHTSUSERID });
-                    }
-                    if (string.IsNullOrEmpty(user.MLoginRightsPassword))
-                    {
-                        dataError.Add(new DataError() { PropertyName = "MLoginRightsPassword", ErrorDescription = ErrorMessages.User.PASSWORD });
-                    }
+                    //if (string.IsNullOrEmpty(user.MLoginRightsUserID))
+                    //{
+                    //    dataError.Add(new DataError() { PropertyName = "MLoginRightsUserID", ErrorDescription = ErrorMessages.User.LOGINRIGHTSUSERID });
+                    //}
+                    //if (string.IsNullOrEmpty(user.MLoginRightsPassword))
+                    //{
+                    //    dataError.Add(new DataError() { PropertyName = "MLoginRightsPassword", ErrorDescription = ErrorMessages.User.PASSWORD });
+                    //}
                     break;
                 default:
                     break;

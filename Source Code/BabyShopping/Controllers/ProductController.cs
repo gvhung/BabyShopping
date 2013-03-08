@@ -7,7 +7,7 @@ using BabyShop.Models;
 
 namespace BabyShopping.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         //
         // GET: /Product/

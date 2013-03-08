@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace BabyShopping.Controllers
 {
-    public class FAQController : Controller
+    public class FAQController : BaseController
     {
         //
         // GET: /FAQ/

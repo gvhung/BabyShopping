@@ -9,9 +9,9 @@ namespace BabyShop.ServiceImplementation
     using System;
     using System.Collections.Generic;
     using System.ServiceModel.Activation;
-    using BabyShop.Data;
-    using BabyShop.Manager;
     using BabyShop.ServiceImplementation.ServiceContracts;
+    using BabyShop.CommonLayer.DataTransferObjects;
+    using BabyShop.BusinessLayer.Manager;
 
     /// <summary>
     /// This class is used to provide services for the system module and associated screens
@@ -19,17 +19,18 @@ namespace BabyShop.ServiceImplementation
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class BabyShopService : IBabyShopServiceContract
     {
-        public EUser ValidateUser(EUser user)
+        public UserDTO ValidateUser(UserDTO user)
         {
-            MUser MU = new MUser();
-            EUser uesrDetail = MU.ValidateUser(user);
-            return uesrDetail;
+            UserManager MU = new UserManager();
+            //UserDTO uesrDetail = MU.ValidateUser(user);
+            //return uesrDetail;
+            return null;
         }
 
-        public bool CreateUser(EUser user)
+        public bool CreateUser(UserDTO user)
         {
             bool status = false;
-            MUser MU = new MUser();
+            UserManager MU = new UserManager();
             try
             {
                 status = MU.CreateUser(user);
@@ -41,20 +42,20 @@ namespace BabyShop.ServiceImplementation
             return status;
         }
 
-        public EUser GetUserDetails(int userId)
+        public UserDTO GetUserDetails(int userId)
         {
-            MUser MU = new MUser();
-            EUser uesrDetail = MU.GetUserDetails(userId);
-            return uesrDetail;
+            UserManager MU = new UserManager();
+            //UserDTO uesrDetail = MU.GetUserDetails(userId);
+            return null; //uesrDetail;
         }
 
-        public bool InsertProductCart(EShoppingCart product)
+        public bool InsertProductCart(ShoppingCartDTO product)
         {
-            MProductCart MN = new MProductCart();
+            ProductCartManager MN = new ProductCartManager();
             bool status = false;
             try
             {
-                status = MN.InsertProductCart(product);
+                //status = MN.InsertProductCart(product);
             }
             catch (Exception ex)
             {
@@ -63,27 +64,25 @@ namespace BabyShop.ServiceImplementation
             return status;
         }
 
-        public List<EShoppingCart> GetShoppingCartIteim(string CartId)
+        public List<ShoppingCartDTO> GetShoppingCartIteim(Guid CartId)
         {
-            MProductCart MN = new MProductCart();
-            List<EShoppingCart> productCartList = MN.GetShoppingCartIteim(CartId);
-            return productCartList;
+            ProductCartManager MN = new ProductCartManager();
+            //List<ShoppingCartDTO> productCartList = MN.GetShoppingCartIteim(CartId);
+            return null;
         }
 
         public bool DeleteShoppingCart(int productCartId)
         {
-            MProductCart MN = new MProductCart();
+            ProductCartManager MN = new ProductCartManager();
             bool status = false;
             status = MN.DeleteShoppingCart(productCartId);
             return status;
         }
 
-        public int CountShoppingCartItems(string userId)
+        public int CountCartItems(Guid cartId)
         {
-            MProductCart MN = new MProductCart();
-            int cartCount = 0;
-            cartCount = MN.CountShoppingCartItems(userId);
-            return cartCount;
+            ProductCartManager productCartMgr = new ProductCartManager();
+            return productCartMgr.CountCartItems(cartId);
         }
     }
 }

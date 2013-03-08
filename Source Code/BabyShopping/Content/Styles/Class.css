@@ -317,6 +317,8 @@ ul#thumblist li a.zoomThumbActive{border:1px solid #868686;}
 .divTable
 {
     display: table;
+    width:70%;
+    vertical-align:middle;
     border-spacing: 5px; /*cellspacing:poor IE support for  this*/ /* border-collapse:separate;*/
 }
 .divHeaderRow

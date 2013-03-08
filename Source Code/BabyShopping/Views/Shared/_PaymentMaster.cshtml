@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/Scripts/flexdropdown.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/Scripts/Common.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Content/Styles/Class.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="wraper">
+        <div id="header" class="Header">
+            <div id="title">
+            </div>
+            @*<div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+            </div>*@
+            <ul id="flexmenu1" class="flexdropdownmenu">
+                <div class="flexdropTopMenu">
+                    <img src="@Url.Content("~/Content/Images/droptop.png")" alt="" />
+                </div>
+                <li>@Html.ActionLink("Our Standards", "OurStandards", "About")</li>
+                <li>@Html.ActionLink("Claudia", "Claudia", "About")</li>
+                <div>
+                    <img src="@Url.Content("~/Content/Images/dropBot.png")" alt="" />
+                </div>
+            </ul>
+            <div class="main-container">
+                <div class="logo fl">
+                    <a href="../Home/Index">
+                        <img src="@Url.Content("~/Content/Images/logo.gif")" alt="" />
+                    </a>
+                </div>
+                <div class="nav fl">
+                    <ul id="menu">
+                        <li>@Html.ActionLink("Shop", "Product", "Product")</li>
+                        <li><a href="#" data-flexmenu="flexmenu1">About Us</a></li>
+                        <li>@Html.ActionLink("Safe Sleep Guidelines", "Index", "Home")</li>
+                        <li>@Html.ActionLink("F.A.Q", "Index", "FAQ")</li>
+                    </ul>
+                </div>
+                <div class="fr searchContainer">
+                    <div class="fl search">
+                        <input type="text" value="" />
+                        <input type="submit" value="" class="btn" />
+                    </div>
+                    <div class="fl addCart">
+                        <label id="lblCartItems">
+                        </label>
+                        <br />
+                        <a href="#" onclick="javascript:fnAddtoCart();">
+                            <img src="@Url.Content("~/Content/Images/spacer.gif")" alt="" /></a></div>
+                    <div class="cl">
+                    </div>
+                </div>
+                <div class="cl">
+                </div>
+            </div>
+        </div>
+        <div class="inner-section">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="cl">
+        </div>
+        <div class="footer">
+            <div class="main-container">
+                <div class="fl footerLinks">
+                    <ul>
+                        <li><a href="#">terms &amp; conditions</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">refund policy</a></li>
+                        <li><a href="#">site map</a></li>
+                        <li><a href="#">contact us</a></li>
+                        <li><a href="#">blog</a></li>
+                        <li><a href="#">
+                            <img src="@Url.Content("~/Content/Images/spacer.gif")" alt="" class="twitter" /></a><a
+                                href="#"><img src="@Url.Content("~/Content/Images/spacer.gif")" alt="" class="facebook" /></a><a
+                                    href="#"><img src="@Url.Content("~/Content/Images/spacer.gif")" alt="" class="thirdicon" /></a></li>
+                        <div class="cl">
+                        </div>
+                    </ul>
+                </div>
+                <div class="fr padT10">
+                    &copy; 2011 Hush Pure Sleep</div>
+            </div>
+        </div>
+        <div class="cl">
+        </div>
+    </div>
+</body>
+</html>
