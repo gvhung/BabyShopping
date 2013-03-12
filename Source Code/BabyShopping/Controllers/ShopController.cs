@@ -10,6 +10,7 @@ namespace BabyShopping.Controllers
 {
     public class ShopController : BaseController
     {
+        private Guid shoppingCartId;
         //
         // GET: /Shop/
         public ActionResult Index()
@@ -21,12 +22,12 @@ namespace BabyShopping.Controllers
         {
             IList<ProductCartModel> productCartModelList = null;
             ProductCartManager productCartMgr = new ProductCartManager();
-            Guid shoppingCartId = base.GetShoppingCartId();
+             shoppingCartId = base.GetShoppingCartId();
 
             if (productCart.ProductId > 0)
             {
                  productCartModelList = productCartMgr.GetCartItems(shoppingCartId);
-                ProductCartModel productCartModel = productCartModelList.Where(x => x.ProductId == productCart.ProductId).FirstOrDefault();
+                ProductCartModel productCartModel = productCartModelList.FirstOrDefault(x => x.ProductId == productCart.ProductId);
                 if (productCartModel == null)
                 {
                     productCart.CartId = shoppingCartId;
@@ -42,11 +43,11 @@ namespace BabyShopping.Controllers
 
         public ActionResult DeleteShoppingCart(int productCartId)
         {
-            IList<ProductCartModel> productCartModelList = null;
-
+            shoppingCartId = base.GetShoppingCartId();
             ProductCartManager productCartMgr = new ProductCartManager();
             bool status = productCartMgr.DeleteShoppingCart(productCartId);
-            return RedirectToAction("ShoppingCart", "Shop");
+            ViewBag.ItemsCount = productCartMgr.CountCartItems(shoppingCartId);
+            return View("ShoppingCart", productCartMgr.GetCartItems(shoppingCartId));
         }
 
         public ActionResult TermCondition()

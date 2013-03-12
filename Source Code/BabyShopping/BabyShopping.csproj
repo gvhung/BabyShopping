@@ -110,7 +110,6 @@
     <Content Include="Content\Scripts\Common.js" />
     <Content Include="Content\Scripts\flexdropdown.js" />
     <Content Include="Content\Scripts\ProductDetail.js" />
-    <Content Include="Content\Scripts\ShoppingCart.js" />
     <Content Include="Content\Styles\Class.css" />
     <Content Include="Content\jquery.jqzoom.css" />
     <Content Include="Content\trans_banner\icons.png" />
