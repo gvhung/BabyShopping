@@ -74,6 +74,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\FAQController.cs" />
+    <Compile Include="Controllers\FooterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
@@ -249,6 +250,8 @@
     </None>
     <Content Include="Views\Shop\CheckOut.cshtml" />
     <Content Include="Views\Shop\ChangeAddress.cshtml" />
+    <Content Include="Views\Footer\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Footer\TermsAndConditions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -308,7 +311,7 @@
     <Content Include="Views\Home\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_PaymentMaster.cshtml" />
+    <Content Include="Views\Shared\_Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shop\TermCondition.cshtml" />

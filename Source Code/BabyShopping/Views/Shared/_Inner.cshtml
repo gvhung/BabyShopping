@@ -6,7 +6,6 @@
     <script src="@Url.Content("~/Scripts/jquery.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Content/Scripts/Common.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Content/Scripts/flexdropdown.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Content/Scripts/Common.js")" type="text/javascript"></script>
     <link href="@Url.Content("~/Content/Styles/Class.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/jquery.jqzoom.css")" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
@@ -21,9 +20,6 @@
         <div id="header" class="Header">
             <div id="title">
             </div>
-            @*<div id="logindisplay">
-                @Html.Partial("_LogOnPartial")
-            </div>*@
             <ul id="flexmenu1" class="flexdropdownmenu">
                 <div class="flexdropTopMenu">
                     <img src="@Url.Content("~/Content/Images/droptop.png")" alt="" />
@@ -68,7 +64,21 @@
         </div>
         <div class="inner-section">
             <div class="container">
-                @RenderBody()
+                <div class="inner-section">
+                    <div class="roundedTop">
+                        <img src="../../Content/Images/roundtopLft.png" alt="" class="fl" />
+                        <img src="../../Content/Images/roundtopRght.png" alt="" class="fr" />
+                    </div>
+                    <div class="roundedBg">
+                        @RenderBody()
+                    </div>
+                    <div class="roundedBot">
+                        <img src="@Url.Content("~/Content/Images/roundbotLft.png")" alt="" class="fl" />
+                        <img src="@Url.Content("~/Content/Images/roundbotRght.png")" alt="" class="fr" />
+                    </div>
+                    <div class="cl">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="cl">
@@ -77,8 +87,8 @@
             <div class="main-container">
                 <div class="fl footerLinks">
                     <ul>
-                        <li><a href="#">terms &amp; conditions</a></li>
-                        <li><a href="#">privacy policy</a></li>
+                        <li>@Html.ActionLink("terms & conditions", "TermsAndConditions", "Footer")</li>
+                        <li>@Html.ActionLink("privacy policy", "PrivacyPolicy", "Footer")</li>
                         <li><a href="#">refund policy</a></li>
                         <li><a href="#">site map</a></li>
                         <li><a href="#">contact us</a></li>
@@ -91,8 +101,10 @@
                         </div>
                     </ul>
                 </div>
+                <div class="fl padT10">
+                    &copy; 2013 Hush Pure Sleep</div>
                 <div class="fr padT10">
-                    &copy; 2011 Hush Pure Sleep</div>
+                    Powered By MaduTech Pvt. Ltd.</div>
             </div>
         </div>
         <div class="cl">

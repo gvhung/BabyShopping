@@ -4,115 +4,113 @@
     Layout = "~/Views/Shared/_Inner.cshtml";
     
 }
-<div class="inner-section">
-    <div class="roundedTop">
-        <img src="@Url.Content("~/Content/Images/roundtopLft.png")" alt="" class="fl" />
-        <img src="@Url.Content("~/Content/Images/roundtopRght.png")" alt="" class="fr" />
+<div class="divTable" style="width: 95%">
+    <div class="divHeaderRow" style="width: 100%; border-bottom: 2px solid black;">
+        <span style="font-size: 25px; color: #000000; font-weight: bold;">Shopping Cart</span>
     </div>
-    <div class="roundedBg">
-        <div class="divTable" style="width: 95%">
-            <div class="divHeaderRow" style="width: 100%; border-bottom: 2px solid black;">
-                <span style="font-size: 25px; color: #000000; font-weight: bold;">Shopping Cart</span>
-            </div>
-            <div class="divRow">
-                <div class="lstView">
-                    <table style="width: 100%">
-                        <tr>
-                            <th>
-                                Item
-                            </th>
-                            <th>
-                                Description
-                            </th>
-                            <th>
-                                Qty
-                            </th>
-                            <th>
-                                Price
-                            </th>
-                            <th>
-                                Action
-                            </th>
-                        </tr>
-                        @foreach (var product in Model)
-                        {
-                            <tr style='background-color: #F3F2F0'>
-                                <td style='width: 10%; vertical-align: middle'>
-                                    <img src="../Content/Images/@product.ImageURL" alt="@product.CategoryName"  width='80px' height='60px' />
-                                </td>
-                                <td>
-                                    <strong>@product.CategoryName</strong>
-                                </td>
-                                <td>
-                                    <strong>@product.Quantity</strong>
-                                </td>
-                                <td>
-                                    <strong>$@product.Price</strong>
-                                </td>
-                                <td>
-                                    @Html.ActionLink("Delete", "DeleteShoppingCart", "Shop", new { productCartId = @product.Id }, null)
-                                </td>
-                            </tr>
-                        }
-                        <tr style='background-color: #CFD0CB'>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                SubTotal
-                            </td>
-                            <td>@Model.Select(x => x.Price).Sum()
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                Shipping
-                            </td>
-                            <td>
-                                $10
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr style='background-color: #646464; height: 50px; color: #ffffff'>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                Total
-                            </td>
-                            <td>
-                                @Html.Raw(string.Format("${0}", @Model.Select(x => x.Price).Sum() + 10))
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="divRow">
-                <div class="cntShopng fl">
-                    <a href="../Product/Product" title="Continue Shopping">Continue Shopping</a></div>
-                <div class="fr">
-                    <a href="../Home/Login" title="Check out">
-                        <img src="@Url.Content("~/Content/Bottom/checkout.png")" alt="Check Out" /></a></div>
-                <div class="cl">
-                </div>
-            </div>
+    <div class="divRow">
+        <div class="lstView">
+            <table style="width: 100%">
+                <tr>
+                    <th>
+                        Action
+                    </th>
+                    <th>
+                        Item
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Qty
+                    </th>
+                    <th>
+                        Unit Price
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                </tr>
+                @foreach (var product in Model)
+                {
+                    <tr style='background-color: #F3F2F0'>
+                        <td>
+                            @Html.ActionLink("Delete", "DeleteShoppingCart", "Shop", new { productCartId = @product.Id }, null)
+                        </td>
+                        <td style='width: 10%; vertical-align: middle'>
+                            <img src="../Content/Images/@product.ImageURL" alt="@product.CategoryName"  width='80px' height='60px' />
+                        </td>
+                        <td>
+                            <strong>@product.CategoryName</strong>
+                        </td>
+                        <td>
+                            <strong>@product.Quantity</strong>
+                        </td>
+                        <td>
+                            <strong>$@product.UnitPrice</strong>
+                        </td>
+                        <td>
+                            <strong>$@product.Price</strong>
+                        </td>
+                    </tr>
+                }
+                <tr style='background-color: #CFD0CB'>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        SubTotal
+                    </td>
+                    <td>$@Model.Select(x => x.Price).Sum()
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        Shipping
+                    </td>
+                    <td>
+                        $@Model.Select(x => x.Price > 0 ? 10 : 0).FirstOrDefault()
+                    </td>
+                </tr>
+                <tr style='background-color: #646464; height: 50px; color: #ffffff'>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        Total
+                    </td>
+                    <td>
+                        @Html.Raw(string.Format("${0}", @Model.Select(x => x.Price).Sum() + @Model.Select(x => x.Price > 0 ? 10 : 0).FirstOrDefault()))
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
-    <div class="roundedBot">
-        <img src="@Url.Content("~/Content/Images/roundbotLft.png")" alt="" class="fl" />
-        <img src="@Url.Content("~/Content/Images/roundbotRght.png")" alt="" class="fr" />
+    <div class="divRow">
+        <div class="cntShopng fl">
+            <a href="../Product/Product" title="Continue Shopping">Continue Shopping</a></div>
+        <div class="fr">
+            <a href="../Home/Login" title="Check out">
+                <img src="@Url.Content("~/Content/Bottom/checkout.png")" alt="Check Out" /></a></div>
+        <div class="cl">
+        </div>
     </div>
-</div>
-<div class="cl">
 </div>

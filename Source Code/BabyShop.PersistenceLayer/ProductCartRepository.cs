@@ -61,6 +61,7 @@ namespace BabyShop.PersistenceLayer
             productCart.CategoryName = Convert.ToString(dataRecord["CategoryName"]);
             productCart.ImageURL = Convert.ToString(dataRecord["ImageURL"]);
             productCart.Quantity = Convert.ToInt32(dataRecord["Quantity"]);
+            productCart.UnitPrice = Convert.ToDecimal(dataRecord["UnitPrice"]);
             productCart.Price = Convert.ToDecimal(dataRecord["Price"]);
             return productCart;
         }

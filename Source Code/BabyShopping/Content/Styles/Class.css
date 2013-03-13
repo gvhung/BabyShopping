@@ -135,14 +135,14 @@ a img {
 .addCart {
 	font:bold 14px "Trebuchet MS", Arial, Helvetica, sans-serif;
 	color:#97d4d5;
-	margin-top:-15px;
+	margin-top:-10px;
 	text-align:center;
 }
 .addCart a img {
 	background:url(../../Content/Images/sprite.gif) no-repeat -69px 0px;
 	width:26px;
 	height:28px;
-	margin-top:-4px;
+	margin-top:-3px;
 }
 .footer {
 	margin:0px;
