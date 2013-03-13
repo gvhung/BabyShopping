@@ -137,6 +137,7 @@ a img {
 	color:#97d4d5;
 	margin-top:-10px;
 	text-align:center;
+	cursor:pointer;
 }
 .addCart a img {
 	background:url(../../Content/Images/sprite.gif) no-repeat -69px 0px;
