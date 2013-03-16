@@ -22,11 +22,11 @@ namespace BabyShopping.Controllers
         {
             IList<ProductCartModel> productCartModelList = null;
             ProductCartManager productCartMgr = new ProductCartManager();
-             shoppingCartId = base.GetShoppingCartId();
+            shoppingCartId = base.GetShoppingCartId();
 
             if (productCart.ProductId > 0)
             {
-                 productCartModelList = productCartMgr.GetCartItems(shoppingCartId);
+                productCartModelList = productCartMgr.GetCartItems(shoppingCartId);
                 ProductCartModel productCartModel = productCartModelList.FirstOrDefault(x => x.ProductId == productCart.ProductId);
                 if (productCartModel == null)
                 {
@@ -38,7 +38,32 @@ namespace BabyShopping.Controllers
             productCartModelList = productCartMgr.GetCartItems(shoppingCartId);
             ViewBag.ItemsCount = productCartMgr.CountCartItems(shoppingCartId);
 
-            return View(productCartModelList);
+            return View();
+        }
+        [HttpPost]
+        public ActionResult LoadProductsFromCart()
+        {
+            IList<ProductCartModel> productCartModelList = null;
+            ProductCartManager productCartMgr = new ProductCartManager();
+            shoppingCartId = base.GetShoppingCartId();
+            productCartModelList = productCartMgr.GetCartItems(shoppingCartId);
+
+            var data = (from product in productCartModelList
+                        select new
+                        {
+                            id = product.Id,
+                            cell = new object[] { product.ImageURL, product.CategoryName,product.Quantity,product.UnitPrice,product.Price
+                            }
+                        }).ToArray();
+
+
+
+            var jsonData = new
+            {
+
+                rows = data
+            };
+            return Json(jsonData);
         }
 
         public ActionResult DeleteShoppingCart(int productCartId)
