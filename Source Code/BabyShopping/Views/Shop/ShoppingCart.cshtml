@@ -4,49 +4,104 @@
     Layout = "~/Views/Shared/_Inner.cshtml";
     
 }
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#jqTable").jqGrid({
-            url: '@Url.Action("LoadProductsFromCart", "Shop")',
-            datatype: "json",
-            mtype: "POST",
-            edit: true,
-            add: false,
-            del: true,
-            colNames: ["Item", "Description", "Quantity", "unit Price", "Price"],
-            colModel: [
-            { name: 'ImageURL', index: 'ImageURL', width: 95, align: 'center', formatter: imageFormatter },
-            { name: 'CategoryName', index: 'CategoryName', width: 80, align: 'left', sortable: true },
-            { name: 'Quantity', index: 'Quantity', width: 40, align: 'left', sortable: true },
-            { name: 'UnitPrice', index: 'UnitPrice', width: 40, align: 'left', sortable: true },
-            { name: 'Price', index: 'Price', width: 40, align: 'left', sortable: true }
-            ],
-            width: 650,
-
-            rowNum: 99999,
-            sortname: "Id",
-            sortorder: "asc"
-        });
-
-        function imageFormatter(cellvalue, options, rowObject) {
-            var imgPath = "../Content/Images/" + cellvalue;
-            var returnValue = "<img src='" + imgPath + "' alt ='" + cellvalue + "' width='80px' height='60px' />";
-            return returnValue;
-        }
-
-    });
-</script>
-<div>
-    <table id="jqTable" class="scroll">
-    </table>
-    <div id="jqTablePager" />
-</div>
 <div class="divTable" style="width: 95%">
     <div class="divHeaderRow" style="width: 100%; border-bottom: 2px solid black;">
         <span style="font-size: 25px; color: #000000; font-weight: bold;">Shopping Cart</span>
     </div>
     <div class="divRow">
         <div class="lstView">
+            <table style="width: 100%">
+                <tr>
+                    <th>
+                        Action
+                    </th>
+                    <th>
+                        Item
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Qty
+                    </th>
+                    <th>
+                        Unit Price
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                </tr>
+                @foreach (var product in Model)
+                {
+                    <tr style='background-color: #F3F2F0'>
+                        <td>
+                            @Html.ActionLink("Delete", "DeleteShoppingCart", "Shop", new { productCartId = @product.Id }, null)
+                        </td>
+                        <td style='width: 10%; vertical-align: middle'>
+                            <img src="../Content/Images/@product.ImageURL" alt="@product.CategoryName"  width='80px' height='60px' />
+                        </td>
+                        <td>
+                            <strong>@product.CategoryName</strong>
+                        </td>
+                        <td>
+                            <strong>@product.Quantity</strong>
+                        </td>
+                        <td>
+                            <strong>$@product.UnitPrice</strong>
+                        </td>
+                        <td>
+                            <strong>$@product.Price</strong>
+                        </td>
+                    </tr>
+                }
+                <tr style='background-color: #CFD0CB'>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        SubTotal
+                    </td>
+                    <td>$@Model.Select(x => x.Price).Sum()
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        Shipping
+                    </td>
+                    <td>
+                        $@Model.Select(x => x.Price > 0 ? 10 : 0).FirstOrDefault()
+                    </td>
+                </tr>
+                <tr style='background-color: #646464; height: 50px; color: #ffffff'>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        Total
+                    </td>
+                    <td>
+                        @Html.Raw(string.Format("${0}", @Model.Select(x => x.Price).Sum() + @Model.Select(x => x.Price > 0 ? 10 : 0).FirstOrDefault()))
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
     <div class="divRow">
