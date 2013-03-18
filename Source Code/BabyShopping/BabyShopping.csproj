@@ -106,6 +106,9 @@
     <Content Include="Content\Images\Baby1.gif" />
     <Content Include="Content\Images\Baby2.gif" />
     <Content Include="Content\Images\Baby3.gif" />
+    <Content Include="Content\Images\check.gif" />
+    <Content Include="Content\Images\cross.png" />
+    <Content Include="Content\Images\edit.png" />
     <Content Include="Content\Images\rollimgThumb1.jpg" />
     <Content Include="Content\Images\thumb_big1.jpg" />
     <Content Include="Content\Scripts\Common.js" />
