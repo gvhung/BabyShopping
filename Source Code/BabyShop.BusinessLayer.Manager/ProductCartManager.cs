@@ -28,6 +28,17 @@ namespace BabyShop.BusinessLayer.Manager
             return status;
         }
 
+        public bool UpdateQuantityInCart(ProductCartModel productCartModel)
+        {
+            ProductCartDTO productCartEntity = new ProductCartDTO();
+            ProductCartRepository productCartRepository = new ProductCartRepository();
+
+            AutoMapper.Mapper.Map(productCartModel, productCartEntity);
+            bool status = productCartRepository.UpdateQuantityInCart(productCartEntity);
+
+            return status;
+        }
+
         public IList<ProductCartModel> GetCartItems(Guid cartId)
         {
             ProductCartRepository productCartRepository = new ProductCartRepository();

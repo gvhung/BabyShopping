@@ -41,3 +41,52 @@ var fnSvcCallFail = function (XMLHttpRequest, textStatus, errorThrown) {
 
 var fnSvcCallSuccess = function (data, textStatus, jqXHR) {
 };
+
+var editQuantityHandler = function () {
+    $('#txtQuantity').attr('class', 'show');
+    $('#divQuantity').attr('class', 'hide');
+    $('#editButton').attr('class', 'hide');
+    $('#updateCancelButton').attr('class', 'show');
+}
+
+var cancelQuantityHandler = function () {
+    $('#txtQuantity').attr('class', 'hide');
+    $('#divQuantity').attr('class', 'show');
+    $('#editButton').attr('class', 'show');
+    $('#updateCancelButton').attr('class', 'hide');
+}
+
+var updateQuantityHandler = function (productId) {
+    $.ajax({
+        type: "POST",
+        url: "../Shop/UpdateQuantityInCart",
+        data: { 'productCartId': productId,
+            'quantity': sessionStorage.quantity
+        },
+        success: function (response) {
+            cancelQuantityHandler();
+            populateGridHandler();
+        },
+        error: function (response) {
+            cancelQuantityHandler();
+            populateGridHandler();
+        },
+        dataType: "json",
+        traditional: true
+    });
+}
+
+var populateGridHandler = function () {
+    $.ajax({
+        type: "POST",
+        url: "../Shop/PopulateGrid",
+        success: function (response) {
+            $.post();
+        },
+        error: function (response) {
+            $.post();
+        },
+        dataType: "json",
+        traditional: true
+    });
+}

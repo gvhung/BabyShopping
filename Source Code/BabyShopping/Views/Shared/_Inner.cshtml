@@ -9,11 +9,11 @@
     <link href="@Url.Content("~/Content/Styles/Class.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/jquery.jqzoom.css")" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
-    if(@ViewBag.ItemsCount != undefined){
-        sessionStorage.cartItemCount = @ViewBag.ItemsCount;
-    }
+
+        sessionStorage.cartItemCount = "@ViewBag.ItemsCount" == " " ? 0 : "@ViewBag.ItemsCount";
+    
     </script>
-    @RenderSection("Head", false);
+    @RenderSection("Head", false)
 </head>
 <body onload="javascript:return LoadCartItems();">
     <div id="wraper">

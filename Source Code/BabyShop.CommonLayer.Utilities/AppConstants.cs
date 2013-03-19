@@ -28,6 +28,7 @@ namespace BabyShop.CommonLayer.Utilities
         public const string DELETECARTITEM = "sp_DeleteShoppingCart";
         public const string VALIDATEUSER = "sp_UserValidate";
         public const string GETUSERDETAILS = "sp_GetUserDetails";
+        public const string UPDATEQUANTITYINCART = "sp_UpdateQuantityInCart";
 
         #endregion
 

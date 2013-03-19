@@ -2,30 +2,15 @@
 @{
     ViewBag.Title = "ShoppingCart";
     Layout = "~/Views/Shared/_Inner.cshtml";
-    
 }
-@section Head{
-    
-}
-
 <script type="text/javascript">
-        $(document).ready(function () {
-            var editQuantityHandler = function () {
-                $('#txtQuantity').attr('class', 'show');
-                $('#divQuantity').attr('class', 'hide');
-                $('#editButton').attr('class', 'hide');
-                $('#updateCancelButton').attr('class', 'show');
-            };
-
-            var cancelQuantityHandler = function () {
-                $('#txtQuantity').attr('class', 'hide');
-                $('#divQuantity').attr('class', 'show');
-                $('#editButton').attr('class', 'show');
-                $('#updateCancelButton').attr('class', 'hide');
-            };
+    $(document).ready(function () {
+        $("#txtQuantity").keyup(function () {
+            sessionStorage.quantity = $(this).val();
 
         });
-    </script>
+    });
+</script>
 <div class="divTable" style="width: 95%">
     <div class="divHeaderRow" style="width: 100%; border-bottom: 2px solid black;">
         <span style="font-size: 25px; color: #000000; font-weight: bold;">Shopping Cart</span>
@@ -54,21 +39,16 @@
                     </th>
                 </tr>
                 @foreach (var product in Model)
-                {
-                    <script type="text/javascript">
-                        $('#EditQuantity').click(function () {
-                            alert('hi');
-                        });
-                    </script>
+                {   
                     <tr style='background-color: #F3F2F0'>
                         <td align="center">
                             <div id="editButton" class="show">
-                                <a href="@Url.Action("DeleteShoppingCart", new { productCartId = product.Id })">
+                                <a href="@Url.Action("DeleteItemInShoppingCart", new { productCartId = product.Id })">
                                     <img src="../../Content/Images/removeImg.jpg" alt="Delete" /></a> &nbsp;&nbsp;
-                                <img src="../../Content/Images/edit.png" alt="Edit" id="EditQuantity" /></div>
+                                <img src="../../Content/Images/edit.png" alt="Edit" id="EditQuantity" onclick="javascript:return editQuantityHandler();" /></div>
                             <div id="updateCancelButton" class="hide">
-                                <img src="../../Content/Images/check.gif" alt="Update" id="UpdateQuantity" />
-                                <img src="../../Content/Images/cross.png" alt="Cancel" id="CancelQuantity" />
+                                <img src="../../Content/Images/check.gif" alt="Update" id="UpdateQuantity" onclick="javascript:return updateQuantityHandler(@product.Id);" />
+                                <img src="../../Content/Images/cross.png" alt="Cancel" id="CancelQuantity" onclick="javascript:return cancelQuantityHandler();" />
                             </div>
                         </td>
                         <td style='width: 10%; vertical-align: middle'>
@@ -81,7 +61,7 @@
                             <div id="divQuantity" class="show">
                                 <strong>@product.Quantity</strong>
                             </div>
-                            <input type="text" id="txtQuantity" value="@product.Quantity" class="hide" width="20px" />
+                            <input type="text" id="txtQuantity" name="Quantity" value="@product.Quantity" class="hide" style="width:50px;"  />
                         </td>
                         <td>
                             <strong>$@product.UnitPrice</strong>

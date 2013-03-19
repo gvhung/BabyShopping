@@ -11,6 +11,7 @@ namespace BabyShopping.Controllers
     public class ShopController : BaseController
     {
         private Guid shoppingCartId;
+        ProductCartManager productCartMgr = new ProductCartManager();
         //
         // GET: /Shop/
         public ActionResult Index()
@@ -21,12 +22,12 @@ namespace BabyShopping.Controllers
         public ActionResult ShoppingCart(ProductCartModel productCart)
         {
             IList<ProductCartModel> productCartModelList = null;
-            ProductCartManager productCartMgr = new ProductCartManager();
-             shoppingCartId = base.GetShoppingCartId();
+            
+            shoppingCartId = base.GetShoppingCartId();
 
             if (productCart.ProductId > 0)
             {
-                 productCartModelList = productCartMgr.GetCartItems(shoppingCartId);
+                productCartModelList = productCartMgr.GetCartItems(shoppingCartId);
                 ProductCartModel productCartModel = productCartModelList.FirstOrDefault(x => x.ProductId == productCart.ProductId);
                 if (productCartModel == null)
                 {
@@ -41,13 +42,36 @@ namespace BabyShopping.Controllers
             return View(productCartModelList);
         }
 
-        public ActionResult DeleteShoppingCart(int productCartId)
+        [HttpPost]
+        public ActionResult PopulateGrid()
         {
             shoppingCartId = base.GetShoppingCartId();
+            return View("ShoppingCart", productCartMgr.GetCartItems(shoppingCartId));
+        }
+
+        public ActionResult DeleteItemInShoppingCart(int productCartId)
+        {
+            shoppingCartId = base.GetShoppingCartId();
+
             ProductCartManager productCartMgr = new ProductCartManager();
             bool status = productCartMgr.DeleteShoppingCart(productCartId);
             ViewBag.ItemsCount = productCartMgr.CountCartItems(shoppingCartId);
+
             return View("ShoppingCart", productCartMgr.GetCartItems(shoppingCartId));
+        }
+
+        [HttpPost]
+        public ActionResult UpdateQuantityInCart(int productCartId, int quantity)
+        {
+            shoppingCartId = base.GetShoppingCartId();
+
+            ProductCartModel productCartModel = new ProductCartModel();
+            productCartModel.Id = productCartId;
+            productCartModel.Quantity = quantity;
+
+            ProductCartManager productCartMgr = new ProductCartManager();
+            bool status = productCartMgr.UpdateQuantityInCart(productCartModel);
+             return View("ShoppingCart", productCartMgr.GetCartItems(shoppingCartId));
         }
 
         public ActionResult TermCondition()

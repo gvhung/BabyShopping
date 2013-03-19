@@ -34,6 +34,24 @@ namespace BabyShop.PersistenceLayer
             return status;
         }
 
+        public bool UpdateQuantityInCart(ProductCartDTO productCart)
+        {
+            SqlParameter[] _sqlParams = new SqlParameter[]
+            {
+                new SqlParameter("@ProductCartId", productCart.Id),
+                new SqlParameter("@Quantity", productCart.Quantity),
+                new SqlParameter("@ReturnValue", SqlDbType.SmallInt)
+            };
+
+            _sqlParams[2].Direction = ParameterDirection.Output;
+            SqlHelper.ExecuteNonQuery(ConnectionClass.OpenConnection(), CommandType.StoredProcedure,
+                AppConstants.UPDATEQUANTITYINCART, _sqlParams);
+
+            Int16 returnValue = Convert.ToInt16(_sqlParams[2].Value);
+            bool status = returnValue > 0 ? true : false;
+            return status;
+        }
+
         public IList<ProductCartDTO> GetCartItems(Guid cartId)
         {
             IList<ProductCartDTO> productCartList = new List<ProductCartDTO>();
