@@ -24,6 +24,9 @@ namespace BabyShop.CommonLayer.Mapper
             //Mapper for UserAddressDTO and UserAddressModel
             AutoMapper.Mapper.CreateMap<UserAddressDTO, UserAddressModel>();
             AutoMapper.Mapper.CreateMap<UserAddressModel, UserAddressDTO>();
+
+            AutoMapper.Mapper.CreateMap<ProductModel, ProductDTO>();
+            AutoMapper.Mapper.CreateMap<ProductDTO, ProductModel>();
         }
 
         #endregion

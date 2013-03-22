@@ -25,6 +25,7 @@ namespace BabyShop.CommonLayer.Utilities
         public const string COUNTCARTITEMS = "sp_CountCartItems";
         public const string INSERTPRODUCTCART = "sp_InsertProductCart";
         public const string GETPRODUCTCARTDETAILS = "sp_GetProductCartDetail";
+        public const string GETPRODUCTS = "sp_GetProducts";
         public const string DELETECARTITEM = "sp_DeleteShoppingCart";
         public const string VALIDATEUSER = "sp_UserValidate";
         public const string GETUSERDETAILS = "sp_GetUserDetails";

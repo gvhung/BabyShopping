@@ -6,17 +6,17 @@
 
 var LoadCartItems = function () {
     displayCartItem();
-}
+};
 
 var displayCartItem = function () {
     document.getElementById('lblCartItems').innerHTML = sessionStorage.cartItemCount;
-}
+};
 
 var fnAddtoCart = function () {
     if (sessionStorage.cartItemCount > 0) {
         window.location.href = jsnUtil.host + "Shop/ShoppingCart?PQuantity=" + 0 + " &PPrice=" + 0 + " &ProductKId=" + 0;
     }
-}
+};
 
 var fnSvcGet = function (strSvcMethodName, jsnPrm) {
     $.ajax({
@@ -47,20 +47,21 @@ var editQuantityHandler = function () {
     $('#divQuantity').attr('class', 'hide');
     $('#editButton').attr('class', 'hide');
     $('#updateCancelButton').attr('class', 'show');
-}
+};
 
 var cancelQuantityHandler = function () {
     $('#txtQuantity').attr('class', 'hide');
     $('#divQuantity').attr('class', 'show');
     $('#editButton').attr('class', 'show');
     $('#updateCancelButton').attr('class', 'hide');
-}
+};
 
 var updateQuantityHandler = function (productId) {
     $.ajax({
         type: "POST",
         url: "../Shop/UpdateQuantityInCart",
-        data: { 'productCartId': productId,
+        data: {
+            'productCartId': productId,
             'quantity': sessionStorage.quantity
         },
         success: function (response) {
@@ -74,14 +75,16 @@ var updateQuantityHandler = function (productId) {
         dataType: "json",
         traditional: true
     });
-}
+};
 
 var populateGridHandler = function () {
     $.ajax({
         type: "POST",
         url: "../Shop/PopulateGrid",
+
         success: function (response) {
-          
+            $.post();
+
         },
         error: function (response) {
             $.post();
@@ -89,4 +92,4 @@ var populateGridHandler = function () {
         dataType: "json",
         traditional: true
     });
-}
+};

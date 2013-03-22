@@ -19,8 +19,8 @@ namespace BabyShop.BusinessLayer.Manager
 
         public bool InsertProductCart(ProductCartModel productCartModel)
         {
-            ProductCartDTO productCartEntity = new ProductCartDTO();
-            ProductCartRepository productCartRepository = new ProductCartRepository();
+            var productCartEntity = new ProductCartDTO();
+            var productCartRepository = new ProductCartRepository();
 
             AutoMapper.Mapper.Map(productCartModel, productCartEntity);
             bool status = productCartRepository.InsertProductCart(productCartEntity);
@@ -30,21 +30,21 @@ namespace BabyShop.BusinessLayer.Manager
 
         public bool UpdateQuantityInCart(ProductCartModel productCartModel)
         {
-            ProductCartDTO productCartEntity = new ProductCartDTO();
-            ProductCartRepository productCartRepository = new ProductCartRepository();
+            var productCartEntity = new ProductCartDTO();
+            var productCartRepository = new ProductCartRepository();
 
             AutoMapper.Mapper.Map(productCartModel, productCartEntity);
-            bool status = productCartRepository.UpdateQuantityInCart(productCartEntity);
+            var status = productCartRepository.UpdateQuantityInCart(productCartEntity);
 
             return status;
         }
 
         public IList<ProductCartModel> GetCartItems(Guid cartId)
         {
-            ProductCartRepository productCartRepository = new ProductCartRepository();
+            var productCartRepository = new ProductCartRepository();
             IList<ProductCartModel> productCartModelList = new List<ProductCartModel>();
 
-            IList<ProductCartDTO> productCartEntityList = productCartRepository.GetCartItems(cartId);
+            var productCartEntityList = productCartRepository.GetCartItems(cartId);
             AutoMapper.Mapper.Map(productCartEntityList, productCartModelList);
             
             return productCartModelList;
@@ -52,14 +52,14 @@ namespace BabyShop.BusinessLayer.Manager
 
         public bool DeleteShoppingCart(int productCartId)
         {
-            ProductCartRepository productCartRepository = new ProductCartRepository();
+            var productCartRepository = new ProductCartRepository();
             bool status = productCartRepository.DeleteCartItem(productCartId);
             return status;
         }
 
         public int CountCartItems(Guid cartId)
         {
-            ProductCartRepository productCartRepository = new ProductCartRepository();
+            var productCartRepository = new ProductCartRepository();
             return productCartRepository.CountCartItems(cartId);
         }
     }

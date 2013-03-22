@@ -7,35 +7,14 @@ namespace BabyShop.CommonLayer.DataTransferObjects
 {
     public class ProductDTO
     {
-        public int ProductKId
-        {
-            get;
-            set;
-        }
-        public int ProductCategoryKId
-        {
-            get;
-            set;
-        }
-        public string ProductCategoryName
-        {
-            get;
-            set;
-        }
-        public decimal ProductCode
-        {
-            get;
-            set;
-        }
-        public decimal ProductPrice
-        {
-            get;
-            set;
-        }
-        public string ProductImageURL
-        {
-            get;
-            set;
-        }
+        public int Id { get; set; }
+
+        public string ProductName { get; set; }
+
+        public string Description { get; set; }
+
+        public decimal Price { get; set; }
+
+        public string ImageURL { get; set; }
     }
 }

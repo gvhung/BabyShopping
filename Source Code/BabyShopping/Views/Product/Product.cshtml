@@ -1,145 +1,45 @@
-﻿@{
+﻿@model IEnumerable<BabyShop.Models.ProductModel>
+@{
     ViewBag.Title = "BabyProduct";
     Layout = "~/Views/Shared/_Product.cshtml";
+   
 }
 <div class="inner-section">
-    <div class="shadowBoxSmal fl">
-        <div class="shadowTopSmal">
-            &nbsp;</div>
-        <form id="Form1" action="ProductDetail" method="post">
-        <div class="shadowContSmal">
-            <input id="productImage" name="ImageURL" type="hidden" value="thumb_small1.jpg" />
-            <input id="productNameOne" name="CategoryName" type="hidden" value="STRIPED COTTON BLANKET" />
-            <input id="Hidden1" name="Id" type="hidden" value="1" />
-            <input id="productPrice" name="Price" type="hidden" value="82.00" />
-            <img src="@Url.Content("~/Content/Images/thumb_small1.jpg")" width="100%" alt="" />
-            <h4 class="blueColr">
-                <label id="lblStrippedOne">
-                    STRIPED COTTON BLANKET</label></h4>
-            Comfort comes with stripes
-            <p>
-                <label id="lblPriceOne">
-                    $82.00</label></p>
-            <p>
-                <input type="submit" value="" class="productDetail" />
-            </p>
+    @{
+        int counter = 0;
+        decimal remainder = 0;
+    }
+    @foreach (var product in Model)
+    {
+        counter = counter + 1;
+        remainder = counter % 3;
+       
+        <div class="shadowBoxSmal fl">
+            <div class="shadowTopSmal">
+                &nbsp;</div>
+            <form id="Form1" action="@Url.Action("ProductDetail", "Product", product)" method="post">
+            <div class="shadowContSmal">
+                <img src="@Url.Content("../Content/Images/" + @product.ImageURL)" width="100%" alt="" />
+                <h4 class="blueColr">
+                    <label id="lblStrippedOne">
+                        @product.ProductName</label></h4>
+                @product.Description
+                <p>
+                    <label id="lblPriceOne">
+                        $@product.Price</label></p>
+                <p>
+                    <input type="submit" value="" class="productDetail" />
+                </p>
+            </div>
+            </form>
+            <div class="shadowBotSmal">
+                &nbsp;</div>
         </div>
-        </form>
-        <div class="shadowBotSmal">
-            &nbsp;</div>
-    </div>
-    <div class="shadowBoxSmal fl">
-        <div class="shadowTopSmal">
-            &nbsp;</div>
-        <form id="Form2" action="/Product/ProductDetail" method="post">
-        <div class="shadowContSmal">
-            <input id="productImageTwo" name="ImageURL" type="hidden" value="babyswaddle.jpg" />
-            <input id="productNameTwo" name="CategoryName" type="hidden" value="BABY SWADDLE BEYBERRY" />
-            <input id="productPriceTwo" name="Price" type="hidden" value="48.00" />
-            <input id="Hidden2" name="Id" type="hidden" value="2" />
-            <img src="@Url.Content("~/Content/Images/babyswaddle.jpg")" width="85%" alt="" />
-            <h4 class="blueColr">
-                BABY SWADDLE BEYBERRY</h4>
-            Comfort comes with stripes
-            <p>
-                $48.00</p>
-            <p>
-                <input type="submit" value="" class="productDetail" /></p>
-        </div>
-        </form>
-        <div class="shadowBotSmal">
-            &nbsp;</div>
-    </div>
-    <div class="shadowBoxSmal fl">
-        <div class="shadowTopSmal">
-            &nbsp;</div>
-        <form id="Form3" action="/Product/ProductDetail" method="post">
-        <div class="shadowContSmal">
-            <input id="productImageThree" name="ImageURL" type="hidden" value="thumb_small1.jpg" />
-            <input id="productNameThree" name="CategoryName" type="hidden" value="STRIPED COTTON BLANKET" />
-            <input id="productPriceThree" name="Price" type="hidden" value="82.00" />
-            <input id="Hidden3" name="Id" type="hidden" value="5" />
-            <img src="@Url.Content("~/Content/Images/thumb_big1.jpg")" width="100%" alt="" />
-            <h4 class="blueColr">
-                STRIPED COTTON BLANKET</h4>
-            Comfort comes with stripes
-            <p>
-                $82.00</p>
-            <p>
-                <input type="submit" value="" class="productDetail" /></p>
-        </div>
-        </form>
-        <div class="shadowBotSmal">
-            &nbsp;</div>
-    </div>
-    <div class="shadowBoxSmal fl">
-        <div class="shadowTopSmal">
-            &nbsp;</div>
-        <form id="Form4" action="/Product/ProductDetail" method="post">
-        <div class="shadowContSmal">
-            <input id="productImageFour" name="ImageURL" type="hidden" value="thumb_small1.jpg" />
-            <input id="productNameFour" name="CategoryName" type="hidden" value="STRIPED COTTON BLANKET" />
-            <input id="productPriceFour" name="Price" type="hidden" value="82.00" />
-            <input id="Hidden4" name="Id" type="hidden" value="7" />
-            <img src="@Url.Content("~/Content/Images/thumb_big1.jpg")" width="100%" alt="" />
-            <h4 class="blueColr">
-                STRIPED COTTON BLANKET</h4>
-            Comfort comes with stripes
-            <p>
-                $82.00</p>
-            <p>
-                <input type="submit" value="" class="productDetail" />
-            </p>
-        </div>
-        </form>
-        <div class="shadowBotSmal">
-            &nbsp;</div>
-    </div>
-    <div class="shadowBoxSmal fl">
-        <div class="shadowTopSmal">
-            &nbsp;</div>
-        <form id="Form5" action="/Product/ProductDetail" method="post">
-        <div class="shadowContSmal">
-            <input id="productImageFive" name="ImageURL" type="hidden" value="babyswaddle.jpg" />
-            <input id="productNameFive" name="CategoryName" type="hidden" value="BABY SWADDLE BEYBERRY" />
-            <input id="productPriceFive" name="Price" type="hidden" value="48.00" />
-            <input id="Hidden5" name="Id" type="hidden" value="14" />
-            <img src="@Url.Content("~/Content/Images/babyswaddle.jpg")" width="85%" alt="" />
-            <h4 class="blueColr">
-                BABY SWADDLE BEYBERRY</h4>
-            Comfort comes with stripes
-            <p>
-                $48.00</p>
-            <p>
-                <input type="submit" value="" class="productDetail" /></p>
-        </div>
-        </form>
-        <div class="shadowBotSmal">
-            &nbsp;</div>
-    </div>
-    <div class="shadowBoxSmal fl">
-        <div class="shadowTopSmal">
-            &nbsp;</div>
-        <form id="Form6" action="/Product/ProductDetail" method="post">
-        <div class="shadowContSmal">
-            <input id="productImageSix" name="ImageURL" type="hidden" value="thumb_small1.jpg" />
-            <input id="productNameSix" name="CategoryName" type="hidden" value="STRIPED COTTON BLANKET" />
-            <input id="productPriceSix" name="Price" type="hidden" value="82.00" />
-            <input id="Hidden6" name="Id" type="hidden" value="10" />
-            <img src="@Url.Content("~/Content/Images/thumb_big1.jpg")" width="100%" alt="" />
-            <h4 class="blueColr">
-                STRIPED COTTON BLANKET</h4>
-            Comfort comes with stripes
-            <p>
-                $82.00</p>
-            <p>
-                <input type="submit" value="" class="productDetail" />
-            </p>
-        </div>
-        </form>
-        <div class="shadowBotSmal">
-            &nbsp;</div>
-    </div>
+        if (remainder == 0)
+        {
+        <br />
+        }
+    }
     <div class="cl">
     </div>
 </div>

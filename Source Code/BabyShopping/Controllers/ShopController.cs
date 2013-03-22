@@ -10,7 +10,7 @@ namespace BabyShopping.Controllers
     public class ShopController : BaseController
     {
         private Guid shoppingCartId;
-        ProductCartManager productCartMgr = new ProductCartManager();
+        readonly ProductCartManager productCartManager = new ProductCartManager();
         //
         // GET: /Shop/
         public ActionResult Index()
@@ -20,23 +20,23 @@ namespace BabyShopping.Controllers
 
         public ActionResult ShoppingCart(ProductCartModel productCart)
         {
-            IList<ProductCartModel> productCartModelList = null;
-            
+            IList<ProductCartModel> productCartModelList;
+
             shoppingCartId = base.GetShoppingCartId();
 
             if (productCart.ProductId > 0)
             {
-                productCartModelList = productCartMgr.GetCartItems(shoppingCartId);
+                productCartModelList = productCartManager.GetCartItems(shoppingCartId);
                 ProductCartModel productCartModel = productCartModelList.FirstOrDefault(x => x.ProductId == productCart.ProductId);
                 if (productCartModel == null)
                 {
                     productCart.CartId = shoppingCartId;
-                    bool status = productCartMgr.InsertProductCart(productCart);
+                    bool status = productCartManager.InsertProductCart(productCart);
                 }
             }
 
-            productCartModelList = productCartMgr.GetCartItems(shoppingCartId);
-            ViewBag.ItemsCount = productCartMgr.CountCartItems(shoppingCartId);
+            productCartModelList = productCartManager.GetCartItems(shoppingCartId);
+            ViewBag.ItemsCount = productCartManager.CountCartItems(shoppingCartId);
 
             return View(productCartModelList);
         }
@@ -45,18 +45,18 @@ namespace BabyShopping.Controllers
         public ActionResult PopulateGrid()
         {
             shoppingCartId = base.GetShoppingCartId();
-            return View("ShoppingCart", productCartMgr.GetCartItems(shoppingCartId));
+            return RedirectToAction("ShoppingCart", productCartManager.GetCartItems(shoppingCartId).FirstOrDefault());
         }
 
         public ActionResult DeleteItemInShoppingCart(int productCartId)
         {
             shoppingCartId = base.GetShoppingCartId();
 
-            ProductCartManager productCartMgr = new ProductCartManager();
-            bool status = productCartMgr.DeleteShoppingCart(productCartId);
-            ViewBag.ItemsCount = productCartMgr.CountCartItems(shoppingCartId);
+            var productCartManager = new ProductCartManager();
+            this.productCartManager.DeleteShoppingCart(productCartId);
+            ViewBag.ItemsCount = productCartManager.CountCartItems(shoppingCartId);
 
-            return View("ShoppingCart", productCartMgr.GetCartItems(shoppingCartId));
+            return View("ShoppingCart", productCartManager.GetCartItems(shoppingCartId));
         }
 
         [HttpPost]
@@ -64,13 +64,13 @@ namespace BabyShopping.Controllers
         {
             shoppingCartId = base.GetShoppingCartId();
 
-            ProductCartModel productCartModel = new ProductCartModel();
+            var productCartModel = new ProductCartModel();
             productCartModel.Id = productCartId;
             productCartModel.Quantity = quantity;
 
-            ProductCartManager productCartMgr = new ProductCartManager();
-            bool status = productCartMgr.UpdateQuantityInCart(productCartModel);
-             return View("ShoppingCart", productCartMgr.GetCartItems(shoppingCartId));
+            var productCartManager = new ProductCartManager();
+            productCartManager.UpdateQuantityInCart(productCartModel);
+            return RedirectToAction("ShoppingCart", productCartManager.GetCartItems(shoppingCartId).FirstOrDefault());
         }
 
         public ActionResult TermCondition()
