@@ -81,7 +81,7 @@ var populateGridHandler = function () {
         type: "POST",
         url: "../Shop/PopulateGrid",
         success: function (response) {
-            $.post();
+          
         },
         error: function (response) {
             $.post();

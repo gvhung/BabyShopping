@@ -9,9 +9,7 @@
     <link href="@Url.Content("~/Content/Styles/Class.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/jquery.jqzoom.css")" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
-
         sessionStorage.cartItemCount = "@ViewBag.ItemsCount" == " " ? 0 : "@ViewBag.ItemsCount";
-    
     </script>
     @RenderSection("Head", false)
 </head>

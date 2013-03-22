@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using BabyShop.Models;
 using BabyShop.BusinessLayer.Manager;
+using BabyShop.Models;
 
 namespace BabyShopping.Controllers
 {

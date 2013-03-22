@@ -1,8 +1,9 @@
 ﻿using System.Web.Mvc;
+using BabyShop.BusinessLayer.Manager;
 
 namespace BabyShopping.Controllers
 {
-    public class FooterController : Controller
+    public class FooterController : BaseController
     {
         //
         // GET: /Footer/
@@ -13,11 +14,15 @@ namespace BabyShopping.Controllers
 
         public ActionResult PrivacyPolicy()
         {
+            ProductCartManager productCartMgr = new ProductCartManager();
+            ViewBag.ItemsCount = productCartMgr.CountCartItems(GetShoppingCartId());
             return View();
         }
 
         public ActionResult TermsAndConditions()
         {
+            ProductCartManager productCartMgr = new ProductCartManager();
+            ViewBag.ItemsCount = productCartMgr.CountCartItems(GetShoppingCartId());
             return View();
         }
     }

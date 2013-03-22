@@ -80,7 +80,7 @@
             });
         });
 
-        sessionStorage.cartItemCount = @ViewBag.ItemsCount;
+        sessionStorage.cartItemCount = "@ViewBag.ItemsCount" == " " ? 0 : "@ViewBag.ItemsCount";
     </script>
 </head>
 <body onload="javascript:return LoadCartItems();">

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using BabyShop.BusinessLayer.Manager;
 
 namespace BabyShopping.Controllers
 {
@@ -12,6 +9,8 @@ namespace BabyShopping.Controllers
         // GET: /FAQ/
         public ActionResult Index()
         {
+            ProductCartManager productCartMgr = new ProductCartManager();
+            ViewBag.ItemsCount = productCartMgr.CountCartItems(GetShoppingCartId());
             return View();
         }
     }
