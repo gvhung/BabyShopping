@@ -9,11 +9,10 @@ namespace BabyShopping.Controllers
     {
         public ActionResult Product()
         {
-            IList<ProductModel> productModels;
             var productCartMgr = new ProductCartManager();
             var productManager = new ProductManager();
 
-            productModels = productManager.GetallProducts();
+            IList<ProductModel> productModels = productManager.GetallProducts();
             ViewBag.ItemsCount = productCartMgr.CountCartItems(GetShoppingCartId());
             
             return View(productModels);

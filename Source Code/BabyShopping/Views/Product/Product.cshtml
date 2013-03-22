@@ -1,13 +1,16 @@
 ﻿@model IEnumerable<BabyShop.Models.ProductModel>
+
 @{
     ViewBag.Title = "BabyProduct";
     Layout = "~/Views/Shared/_Product.cshtml";
+    
    
 }
 <div class="inner-section">
     @{
         int counter = 0;
         decimal remainder = 0;
+        string imagePath = System.Web.Configuration.WebConfigurationManager.AppSettings["ImageFolder"];
     }
     @foreach (var product in Model)
     {
@@ -19,10 +22,10 @@
                 &nbsp;</div>
             <form id="Form1" action="@Url.Action("ProductDetail", "Product", product)" method="post">
             <div class="shadowContSmal">
-                <img src="@Url.Content("../Content/Images/" + @product.ImageURL)" width="100%" alt="" />
+                <img src="@Url.Content(imagePath + @product.ImageURL)" width="100%" alt="" />
                 <h4 class="blueColr">
                     <label id="lblStrippedOne">
-                        @product.ProductName</label></h4>
+                        @product.Name</label></h4>
                 @product.Description
                 <p>
                     <label id="lblPriceOne">

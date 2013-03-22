@@ -45,14 +45,16 @@
                             <div id="editButton" class="show">
                                 <a href="@Url.Action("DeleteItemInShoppingCart", new { productCartId = product.Id })">
                                     <img src="../../Content/Images/removeImg.jpg" alt="Delete" /></a> &nbsp;&nbsp;
-                                <img src="../../Content/Images/edit.png" alt="Edit" id="EditQuantity" onclick="javascript:return editQuantityHandler();" /></div>
+                                <img src="../../Content/Images/edit.png" alt="Edit" id="EditQuantity" onclick="javascript:return editQuantityHandler();" />
+                            </div>
                             <div id="updateCancelButton" class="hide">
                                 <img src="../../Content/Images/check.gif" alt="Update" id="UpdateQuantity" onclick="javascript:return updateQuantityHandler(@product.Id);" />
                                 <img src="../../Content/Images/cross.png" alt="Cancel" id="CancelQuantity" onclick="javascript:return cancelQuantityHandler();" />
                             </div>
                         </td>
                         <td style='width: 10%; vertical-align: middle'>
-                            <img src="../Content/Images/@product.ImageURL" alt="@product.CategoryName"  width='80px' height='60px' />
+                            <img src="@Url.Content(@System.Web.Configuration.WebConfigurationManager.AppSettings["ImageFolder"] + @product.ImageURL)" 
+                            alt="@product.CategoryName"  width='80px' height='60px' />
                         </td>
                         <td>
                             <strong>@product.CategoryName</strong>
@@ -124,9 +126,9 @@
     </div>
     <div class="divRow">
         <div class="cntShopng fl">
-            <a href="../Product/Product" title="Continue Shopping">Continue Shopping</a></div>
+            <a href="@Url.Action("Product", "Product")" title="Continue Shopping">Continue Shopping</a></div>
         <div class="fr">
-            <a href="../Home/Login" title="Check out">
+            <a href="@Url.Action("Login", "Home")"  title="Check out">
                 <img src="@Url.Content("~/Content/Bottom/checkout.png")" alt="Check Out" /></a></div>
         <div class="cl">
         </div>
