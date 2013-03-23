@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ProductDTO.cs" />
     <Compile Include="ProductCartDTO.cs" />
+    <Compile Include="ProductImagesDTO.cs" />
     <Compile Include="ShoppingCartDTO.cs" />
     <Compile Include="UserAddressDTO.cs" />
     <Compile Include="UserDTO.cs" />

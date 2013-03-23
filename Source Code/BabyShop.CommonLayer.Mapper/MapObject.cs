@@ -27,6 +27,9 @@ namespace BabyShop.CommonLayer.Mapper
 
             AutoMapper.Mapper.CreateMap<ProductModel, ProductDTO>();
             AutoMapper.Mapper.CreateMap<ProductDTO, ProductModel>();
+
+            AutoMapper.Mapper.CreateMap<ProductImagesModel, ProductImagesDTO>();
+            AutoMapper.Mapper.CreateMap<ProductImagesDTO, ProductImagesModel>();
         }
 
         #endregion
