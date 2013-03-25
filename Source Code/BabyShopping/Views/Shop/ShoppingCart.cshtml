@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BabyShop.Models.ProductCartModel>
+﻿@using BabyShop.Models
+@model IEnumerable<BabyShop.Models.ProductCartModel>
 @{
     ViewBag.Title = "ShoppingCart";
     Layout = "~/Views/Shared/_Inner.cshtml";
@@ -17,7 +18,8 @@
     </div>
     <div class="divRow">
         <div class="lstView">
-            <table style="width: 100%">
+            <form id="shoppingCartForm" method="POST">
+            <table style="width: 100%" id="tblProductDetails">
                 <tr>
                     <th>
                         Action
@@ -38,7 +40,7 @@
                         Price
                     </th>
                 </tr>
-                @foreach (var product in Model)
+                @foreach (ProductCartModel product in Model)
                 {   
                     <tr style='background-color: #F3F2F0'>
                         <td align="center">
@@ -54,14 +56,17 @@
                         </td>
                         <td style='width: 10%; vertical-align: middle'>
                             <img src="@Url.Content(@System.Web.Configuration.WebConfigurationManager.AppSettings["ImageFolder"] + @product.ImageURL)" 
-                            alt="@product.CategoryName"  width='80px' height='60px' />
+                                 alt="@product.CategoryName"  width='80px' height='60px' />
                         </td>
                         <td>
                             <strong>@product.CategoryName</strong>
                         </td>
                         <td>
                             <div id="divQuantity" class="show" align="right">
-                                <strong>@product.Quantity</strong>
+                                <strong>
+                                    <label>
+                                        @product.Quantity</label>
+                                </strong>
                             </div>
                             <input type="text" id="txtQuantity" name="Quantity" value="@product.Quantity" class="hide" style="width:50px;"  />
                         </td>
@@ -122,6 +127,7 @@
                     </td>
                 </tr>
             </table>
+            </form>
         </div>
     </div>
     <div class="divRow">

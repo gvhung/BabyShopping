@@ -67,10 +67,14 @@ var updateQuantityHandler = function (productId) {
         success: function (response) {
             cancelQuantityHandler();
             populateGridHandler();
+            $('#shoppingCartForm').submit();
         },
         error: function (response) {
+
             cancelQuantityHandler();
-            populateGridHandler();
+           
+            $('#shoppingCartForm').submit();
+            //populateGridHandler();
         },
         dataType: "json",
         traditional: true
@@ -81,13 +85,9 @@ var populateGridHandler = function () {
     $.ajax({
         type: "POST",
         url: "../Shop/PopulateGrid",
-
         success: function (response) {
-            $.post();
-
         },
         error: function (response) {
-            $.post();
         },
         dataType: "json",
         traditional: true
