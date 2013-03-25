@@ -42,18 +42,22 @@ var fnSvcCallFail = function (XMLHttpRequest, textStatus, errorThrown) {
 var fnSvcCallSuccess = function (data, textStatus, jqXHR) {
 };
 
-var editQuantityHandler = function () {
-    $('#txtQuantity').attr('class', 'show');
-    $('#divQuantity').attr('class', 'hide');
-    $('#editButton').attr('class', 'hide');
-    $('#updateCancelButton').attr('class', 'show');
+var setQuantity = function (quantity) {
+    sessionStorage.quantity = quantity.value;
+}
+
+var editQuantityHandler = function (productId) {
+    $("#txtQuantity" + productId).attr('class', 'show');
+    $("#divQuantity" + productId).attr('class', 'hide');
+    $("#editButton" + productId).attr('class', 'hide');
+    $("#updateCancelButton" + productId).attr('class', 'show');
 };
 
-var cancelQuantityHandler = function () {
-    $('#txtQuantity').attr('class', 'hide');
-    $('#divQuantity').attr('class', 'show');
-    $('#editButton').attr('class', 'show');
-    $('#updateCancelButton').attr('class', 'hide');
+var cancelQuantityHandler = function (productId) {
+    $("#txtQuantity" + productId).attr('class', 'hide');
+    $("#divQuantity" + productId).attr('class', 'show');
+    $("#editButton" + productId).attr('class', 'show');
+    $("#updateCancelButton" + productId).attr('class', 'hide');
 };
 
 var updateQuantityHandler = function (productId) {
@@ -65,14 +69,14 @@ var updateQuantityHandler = function (productId) {
             'quantity': sessionStorage.quantity
         },
         success: function (response) {
-            cancelQuantityHandler();
+            cancelQuantityHandler(productId);
             populateGridHandler();
             $('#shoppingCartForm').submit();
         },
         error: function (response) {
 
-            cancelQuantityHandler();
-           
+            cancelQuantityHandler(productId);
+
             $('#shoppingCartForm').submit();
             //populateGridHandler();
         },

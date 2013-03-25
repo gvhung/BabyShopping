@@ -6,10 +6,10 @@
 }
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#txtQuantity").keyup(function () {
-            sessionStorage.quantity = $(this).val();
-
-        });
+//        $("#txtQuantity").keyup(function () {
+//            sessionStorage.quantity = $(this).val();
+//
+//        });
     });
 </script>
 <div class="divTable" style="width: 95%">
@@ -44,14 +44,14 @@
                 {   
                     <tr style='background-color: #F3F2F0'>
                         <td align="center">
-                            <div id="editButton" class="show">
+                            <div id='editButton@(product.Id)' class="show">
                                 <a href="@Url.Action("DeleteItemInShoppingCart", new { productCartId = product.Id })">
                                     <img src="../../Content/Images/removeImg.jpg" alt="Delete" /></a> &nbsp;&nbsp;
-                                <img src="../../Content/Images/edit.png" alt="Edit" id="EditQuantity" onclick="javascript:return editQuantityHandler();" />
+                                <img src="../../Content/Images/edit.png" alt="Edit" id="EditQuantity" onclick="javascript:return editQuantityHandler(@product.Id);" />
                             </div>
-                            <div id="updateCancelButton" class="hide">
+                            <div id="updateCancelButton@(product.Id)" class="hide">
                                 <img src="../../Content/Images/check.gif" alt="Update" id="UpdateQuantity" onclick="javascript:return updateQuantityHandler(@product.Id);" />
-                                <img src="../../Content/Images/cross.png" alt="Cancel" id="CancelQuantity" onclick="javascript:return cancelQuantityHandler();" />
+                                <img src="../../Content/Images/cross.png" alt="Cancel" id="CancelQuantity" onclick="javascript:return cancelQuantityHandler(@product.Id);" />
                             </div>
                         </td>
                         <td style='width: 10%; vertical-align: middle'>
@@ -68,7 +68,7 @@
                                         @product.Quantity</label>
                                 </strong>
                             </div>
-                            <input type="text" id="txtQuantity" name="Quantity" value="@product.Quantity" class="hide" style="width:50px;"  />
+                            <input type="text" id="txtQuantity@(product.Id)" name="Quantity" value="@product.Quantity" class="hide" style="width:50px;" onkeyup="javascript:return setQuantity(this);"  />
                         </td>
                         <td align="right">
                             <strong>$@product.UnitPrice</strong>
